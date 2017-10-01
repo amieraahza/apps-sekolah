@@ -368,7 +368,125 @@ class Html
 
 		return $input; # pulangkan nilai
 	}
+###///////////////////////////////////////////////////////////////////////////////////////////////////////
+	# tambah input berasaskan type
+	function tambahIkutType($jadual,$namaMedan,$senarai)
+	{	# istihar pembolehubah 
+		$jenisMedan = isset($senarai['jenis_medan'])? $senarai['jenis_medan']: '';
+		$jenisData = isset($senarai['jenis_data'])? $senarai['jenis_data']: '';
+		$labelDibawah = isset($senarai['label_dibawah'])? $senarai['label_dibawah']: '';
+		$name = 'name="' . $jadual . '[' . $namaMedan . ']"';
+		//$input = $name . ' value="' . $data . '"';
+		$inputText = $name;
+		$tabline = "\n\t\t\t";
+		$tabline2 = "\n\t\t";
+		# butang 
+		$birutua = 'btn btn-primary btn-mini';
+		$birumuda = 'btn btn-info btn-mini';
+		$merah = 'btn btn-danger btn-mini';
 
+		//if ( in_array($jenisMedan,array(...)) )
+		if(in_array($jenisMedan,array('textbox')))
+		{#kod utk input text 
+			$data = null;
+			$input = '<div class="input-group input-group">' . $tabline
+				   //. '<span class="input-group-addon">' . $data . '</span>' . $tabline
+				   . '<input type="text" ' . $name . ' class="form-control">' . $tabline
+				   . '<span class="input-group-addon">' . $labelDibawah . '</span>'
+				   . $tabline2 . '</div>'
+				   . '';
+		}
+		elseif ( in_array($jenisMedan,array('textboxtik')) )
+		{#kod untuk textbox dan tik
+			$data = null;
+			$pecah = explode('|', $jenisData);
+			$input = '<div class="input-group input-group">' . $tabline
+				   //. '<span class="input-group-addon">' . $data . '</span>' . $tabline
+				   . '<input type="text" ' . $inputText . ' value="' . $pecah[0] . '"'
+				   . ' class="form-control">' . $tabline
+				   . '<span class="input-group-addon">'
+				   . $tabline . '<input type="checkbox" value="x">'
+				   . $pecah[1] . '</span>'
+				   . $tabline2 . '</div>'
+				   . '';
+		}
+		elseif ( in_array($jenisMedan,array('password','kataLaluan')) )
+		{#kod untuk input password
+			$input = ''//'<div class="input-group input-group-sm">' . $tabline
+				   //. '<span class="input-group-addon"></span>' . $tabline
+				   . '<input type="password" ' . $name
+				   . $tabline . ' placeholder="Tukar kata laluan"'
+				   . ' class="form-control">'
+				   //. $tabline2 . '</div>'
+				   . '';
+		}
+		elseif ( in_array($jenisMedan,array('select')) )
+		{#kod untuk input select option
+			# set pembolehubah
+			$input2 = null;
+			$tatasusunan = explode(',', $jenisData);
+			$data = null;
+
+			foreach ($tatasusunan as $key => $value)
+			{
+				$input2 .= '<option value="' . $value . '">';
+				$input2 .= ucfirst($value);
+				$input2 .= '</option>' . $tabline;
+			}
+			
+			$paparLabelBawah = ($labelDibawah==null) ? '' : 
+				'<span class="input-group-addon">' 
+				. $labelDibawah . '</span>';
+			# cantumkan dalam input
+			$input = '<div class="input-group input-group-sm">' . $tabline
+				   //. '<span class="input-group-addon">' . $data . '</span>' . $tabline
+				   . '<select ' . $name . ' class="form-control">' . $tabline
+				   . $input2 . '</select>'
+				   . $paparLabelBawah
+				   . $tabline2 . '</div>'
+				   . '';
+		}
+		elseif ( in_array($jenisMedan,array('selecttiktextbox')) )
+		{#kod untuk input select option
+			# set pembolehubah
+			$input2 = null;
+			$tatasusunan = explode(',', $jenisData);
+			$input2 .= '<span class="input-group-addon">';
+			foreach ($tatasusunan as $key => $value)
+			{
+				$input2 .= $tabline
+						. '<input type="checkbox" ' . $name
+						. ' value="' . ucfirst($value) . '">'
+						. ucfirst($value);
+			}
+			$input2 .= '</span>' . $tabline;
+
+			# cantum dengan textbox
+			$input = '<input type="text" ' . $name . ' class="form-control">';
+
+			# cantumkan dalam input
+			$input = '<div class="input-group input-group-sm">' . $tabline
+				   . $input2 . $input
+				   . $tabline2 . '</div>'
+				   . '';
+		}
+		elseif ( in_array($jenisMedan,array('blockquote')) )
+		{#kod untuk blockquote
+			$data = null;
+			$input = '<blockquote>'
+				   . '<p class="form-control-static text-info">' . $data . '</p>'
+				   //. '<small>Alamat <cite title="Source Title">baru</cite></small>'
+				   . '</blockquote>';
+		}
+		else
+		{#kod untuk lain2
+			$data = $jenisData;
+			$input = '<p class="form-control-static text-info">' . $data . '</p>';
+		}
+
+		return $input; # pulangkan nilai		
+	}
+###///////////////////////////////////////////////////////////////////////////////////////////////////////
 	# mula untuk kod php+html 
 	function papar_jadual($row, $myTable, $pilih, $classTable = null)
 	{
