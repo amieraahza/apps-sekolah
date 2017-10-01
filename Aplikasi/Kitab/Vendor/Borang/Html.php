@@ -473,8 +473,7 @@ class Html
 
 			# cantumkan dalam input
 			$input = '<div class="input-group input-group-sm">' . $tabline
-			       . $input2 . $tabline2 . '</div>'
-				   . '';
+			       . $input2 . $tabline2 . '</div>' . '';
 		}
 		elseif ( in_array($jenisMedan,array('selecttiktextbox')) )
 		{#kod untuk input select option
