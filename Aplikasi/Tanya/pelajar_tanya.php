@@ -341,20 +341,18 @@ class pelajar_Tanya extends \Aplikasi\Kitab\Tanya
 					'jenis_medan' => 'textbox',
 					'jenis_data' => null,
 					),
-				'jantina' => array(
-					'nama_label' => 'Gender*',
-					'jenis_medan' => 'select',
-					'jenis_data' => '- Gender -,Lelaki,Perempuan',
+				'tarikh_lahir' => array(
+					'nama_label' => 'Birth Date*',
+					'jenis_medan' => 'textbox',
+					'jenis_data' => null,
+					'label_dibawah' => '(YYYY-MM-DD)',
 					),
-				'bangsa' => array(
-					'nama_label' => 'Race*',
-					'jenis_medan' => 'select',
-					'jenis_data' => '- Race -,Melayu,Cina,India,Lain-lain',
-					),
-				'agama' => array(
-					'nama_label' => 'Religion*',
-					'jenis_medan' => 'select',
-					'jenis_data' => '- Religion -,Islam,Budda,Hindu,Lain-lain',
+				'jantina-bangsa-agama' => array(
+					'nama_label' => 'Gender/Race/Religion*',
+					'jenis_medan' => 'manyselect',
+					'jenis_data' => '- Gender -,Lelaki,Perempuan'
+						. '|- Race -,Melayu,Cina,India,Lain-lain'
+						. '|- Religion -,Islam,Budda,Hindu,Lain-lain'
 					),
 				'no_tel_waris' => array(
 					'nama_label' => 'Tel. Mobile*(Parent)',
@@ -401,7 +399,7 @@ class pelajar_Tanya extends \Aplikasi\Kitab\Tanya
 				'alahan' => array(
 					'nama_label' => 'Ilness/Alergic*',
 					'jenis_medan' => 'selecttiktextbox',
-					'jenis_data' => 'Asthmatic,Heart,Skin,Allergic,Others:',
+					'jenis_data' => 'Asthmatic,Heart,Skin,Allergic',
 					'label_dibawah' => 'Others : ',
 					),
 				'nama_waris1' => array(
@@ -439,9 +437,7 @@ class pelajar_Tanya extends \Aplikasi\Kitab\Tanya
 					'jenis_medan' => 'select',
 					'jenis_data' => '- Relation -,Bapa,Ibu,Datok,Nenek,Bapa Saudara,Ibu Saudara,Lain-lain',
 					'label_dibawah' => '(Guardion/Mother Infomation)',
-					),
-					
-				
+					),	
 				);
 
 		$medan2 = array(); # tiada nilai
