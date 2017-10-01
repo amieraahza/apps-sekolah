@@ -1,5 +1,5 @@
 <?php 
-include 'diatas.php';
+include 'diatas_menu.php';
 /*echo '<pre>';
 echo '<br>$this->medanbaru:'; print_r($this->medanbaru);
 echo '</pre>'; //*/
@@ -27,5 +27,3 @@ $panggilFormat = new \Aplikasi\Kitab\HTML();
 <?php endforeach; ?>
 <!-- tamat - input tengah ------------------------------------------------------------------------------------------- -->
 </form>
-<?php
-include 'dibawah.php';
