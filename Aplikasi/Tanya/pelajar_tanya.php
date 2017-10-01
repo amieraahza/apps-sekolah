@@ -445,5 +445,224 @@ class pelajar_Tanya extends \Aplikasi\Kitab\Tanya
 		return $medan; # pulangkan pemboleubah
 	}
 #------------------------------------------------------------------------------------------------------------------
+	public function datapelajar($jadual)
+	{
+		# ada nilai
+		$medan = array(
+			'0' => array(
+				'no' => '1',
+				'date' => '1994-12-18',
+				'm/f' => 'F',
+				'name' => 'Janet',
+				'ic' => '2015011001',
+				'handphone' => '120111001',
+				'email' => 'student@duduk.mana1',
+				'status' => 'Registered',
+				'intake' => '2016',
+				'level' => '7',
+				'adm' => '7w/ict'
+				),
+			'1' => array (
+				'no' => '2',
+				'date' => '1994-12-19',
+				'm/f' => 'M',
+				'name' => 'Darren',
+				'ic' => '2015011002',
+				'handphone' => '120111002',
+				'email' => 'student@duduk.mana2',
+				'status' => 'Registered',
+				'intake' => '2016',
+				'level' => '7',
+				'adm' =>'7w/ict'
+				),
+			'2' => array (
+				'no' => '3',
+				'date' => '1993-12-20',
+				'm/f' => 'F',
+				'name' => 'Sophie',
+				'ic' => '2015011003',
+				'handphone' => '120111003',
+				'email' => 'student@duduk.mana3',
+				'status' => 'Registered',
+				'intake' => '2016',
+				'level' => '7',
+				'adm' =>'7w/ict'
+				),
+			'3' => array (
+				'no' => '4',
+				'date' => '1994-12-21',
+				'm/f' => 'M',
+				'name' => 'Ravi',
+				'ic' => '2015011004',
+				'handphone' => '120111004',
+				'email' => 'student@duduk.mana4',
+				'status' => 'Registered',
+				'intake' => '2016',
+				'level' => '7',
+				'adm' => '7w/ict'
+				),
+			'4' => array (
+				'no' => '5',
+				'date' => '1993-12-22',
+				'm/f' => 'F',
+				'name' => 'Daisy',
+				'ic' => '2015011005',
+				'handphone' => '120111005',
+				'email' => 'student@duduk.mana5',
+				'status' => 'Registered',
+				'intake' => '2016',
+				'level' => '7',
+				'adm' => '7w/ict'
+				),
+			'5' => array (
+				'no' => '6',
+				'date' => '1993-12-22',
+				'm/f' => 'M',
+				'name' => 'Tom',
+				'ic' => '2015011006',
+				'handphone' => '120111006',
+				'email' => 'student@duduk.mana6',
+				'status' => 'Registered',
+				'intake' => '2016',
+				'level' => '7',
+				'adm' => '7w/ict'
+				),
+			'6' => array (
+				'no' => '7',
+				'date' => '1994-10-11',
+				'm/f' => 'M',
+				'name' => 'Brett',
+				'ic' => '2015011007',
+				'handphone' => '120111007',
+				'email' => 'student@duduk.mana7',
+				'status' => 'New',
+				'intake' => '2016',
+				'level' => '8',
+				'adm' => '8r/ict'
+				),
+			'7' => array (
+				'no' => '8',
+				'date' => '1994-12-03',
+				'm/f' => 'M',
+				'name' => 'John',
+				'ic' => '2015011008',
+				'handphone' => '120111008',
+				'email' => 'student@duduk.mana8',
+				'status' => 'Registered',
+				'intake' => '2016',
+				'level' => '8',
+				'adm' => '8r/ict'
+				),
+			'8' => array (
+				'no' => '9',
+				'date' => '1995-02-20',
+				'm/f' => 'F',
+				'name' => 'Celia',
+				'ic' => '2015011009',
+				'handphone' => '120111009',
+				'email' => 'student@duduk.mana9',
+				'status' => 'Registered',
+				'intake' => '2016',
+				'level' => '8',
+				'adm' => '8r/ict'
+				),
+			'9' => array (
+				'no' => '10',
+				'date' => '1994-09-21',
+				'm/f' => 'M',
+				'name' => 'Leo',
+				'ic' => '2015011010',
+				'handphone' => '120111010',
+				'email' => 'student@duduk.mana10',
+				'status' => 'Registered',
+				'intake' => '2016',
+				'level' => '8',
+				'adm' => '8r/ict'
+				),
+			'10' => array (
+				'no' => '11',
+				'date' => '1995-06-14',
+				'm/f' => 'F',
+				'name' => 'Shankunthala',
+				'ic' => '2015011011',
+				'handphone' => '120111011',
+				'email' => 'student@duduk.mana11',
+				'status' => 'ExistigStudent',
+				'intake' => '2016',
+				'level' => '8',
+				'adm' => '8r/ict'
+				),
+			'11' => array (
+				'no' => '12',
+				'date' => '1995-12-18',
+				'm/f' => 'F',
+				'name' => 'Sally',
+				'ic' => '2015011012',
+				'handphone' => '120111012',
+				'email' => 'student@duduk.mana12',
+				'status' => 'Registered',
+				'intake' => '2016',
+				'level' => '9',
+				'adm' => '9m/ict'
+				),
+			'12' => array (
+				'no' => '13',
+				'date' => '1995-09-12',
+				'm/f' => 'F',
+				'name' => 'Jane',
+				'ic' => '2015011013',
+				'handphone' => '120111013',
+				'email' => 'student@duduk.mana13',
+				'status' => 'Registered',
+				'intake' => '2016',
+				'level' => '9',
+				'adm' => '9m/ict'
+				),
+			'13' => array (
+				'no' => '14',
+				'date' => '1996-04-20',
+				'm/f' => 'M',
+				'name' => 'Paul',
+				'ic' => '2015011014',
+				'handphone' => '120111014',
+				'email' => 'student@duduk.mana14',
+				'status' => 'Registered',
+				'intake' => '2016',
+				'level' => '9',
+				'adm' => '9m/ict'
+				),
+			'14' => array (
+				'no' => '15',
+				'date' => '1995-12-11',
+				'm/f' => 'F',
+				'name' => 'Rachael',
+				'ic' => '2015011015',
+				'handphone' => '120111015',
+				'email' => 'student@duduk.mana15',
+				'status' => 'ExistigStudent',
+				'intake' => '2016',
+				'level' => '9',
+				'adm' => '9m/ict'
+				),
+			'15' => array (
+				'no' => '16',
+				'date' => '1996-04-02',
+				'm/f' => 'M',
+				'name' => 'Martin',
+				'ic' => '2015011016',
+				'handphone' => '120111016',
+				'email' => 'student@duduk.mana16',
+				'status' => 'Registered',
+				'intake' => '2016',
+				'level' => '9',
+				'adm' => '9m/ict'
+				),
+			);
+
+		$medan2 = array(); # tiada nilai
+
+		return $medan; # pulangkan pemboleubah
+	}
+#------------------------------------------------------------------------------------------------------------------
 #==========================================================================================
 }
