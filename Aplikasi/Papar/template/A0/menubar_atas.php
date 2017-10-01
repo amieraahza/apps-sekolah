@@ -20,7 +20,7 @@ $icon['Stats'] = '<span class="glyphicon glyphicon-stats"></span>';
 <li class="dropdown"><a <?php echo $nav ?> href="#">
 	<i class="fa fa-users fa-2x" aria-hidden="true"></i>
 	Staf</a></li>
-<li class="dropdown"><a <?php echo $nav ?> href="#">
+<li><a href="<?php echo URL ?>pelajar/daftarBaru">
 	<i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
 	Pendaftaran</a></li>
 <li class="dropdown"><a <?php echo $nav ?> href="#">
