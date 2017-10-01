@@ -380,6 +380,7 @@ class Html
 		$inputText = $name;
 		$tabline = "\n\t\t\t";
 		$tabline2 = "\n\t\t";
+		$tabline4 = "\n\t\t\t\t";
 		# butang 
 		$birutua = 'btn btn-primary btn-mini';
 		$birumuda = 'btn btn-info btn-mini';
@@ -433,7 +434,7 @@ class Html
 				$input2 .= ucfirst($value);
 				$input2 .= '</option>' . $tabline;
 			}
-			
+
 			$paparLabelBawah = ($labelDibawah==null) ? '' : 
 				'<span class="input-group-addon">' 
 				. $labelDibawah . '</span>';
@@ -446,20 +447,53 @@ class Html
 				   . $tabline2 . '</div>'
 				   . '';
 		}
+		elseif ( in_array($jenisMedan,array('manyselect')) )
+		{#kod untuk input select option
+			# set pembolehubah
+			$input2 = null;
+			$pecahan = @explode('|', $jenisData);
+			
+			$input2 .= '<div class="row"><!-- added div.row -->';
+			for($mula = 0; $mula < count($pecahan); $mula++):
+				$tatasusunan = @explode(',', $pecahan[$mula]);
+				$input2 .= $tabline . '<div class="col-sm-4">'
+						. $tabline4 . '<select ' . $name 
+						. ' class="form-control">';
+				foreach ($tatasusunan as $key => $value)
+				{
+					$input2 .= $tabline4;
+					$input2 .= '<option value="' . $value . '">';
+					$input2 .= ucfirst($value);
+					$input2 .= '</option>';
+				}
+				$input2	.= $tabline4 . '</select>' . $tabline
+						. '</div><!-- class="col-sm-4" -->';
+			endfor;
+			$input2 .= $tabline . '</div><!-- class="row" -->';
+
+			# cantumkan dalam input
+			$input = '<div class="input-group input-group-sm">' . $tabline
+			       . $input2 . $tabline2 . '</div>'
+				   . '';
+		}
 		elseif ( in_array($jenisMedan,array('selecttiktextbox')) )
 		{#kod untuk input select option
 			# set pembolehubah
 			$input2 = null;
+			$kosong = '&nbsp;&nbsp;';
 			$tatasusunan = explode(',', $jenisData);
 			$input2 .= '<span class="input-group-addon">';
 			foreach ($tatasusunan as $key => $value)
 			{
-				$input2 .= $tabline
-						. '<input type="checkbox" ' . $name
+				$input2 .= $tabline 
+						. '<input type="radio" ' . $name
 						. ' value="' . ucfirst($value) . '">'
-						. ucfirst($value);
+						. $kosong . ucfirst($value) . $kosong;
 			}
-			$input2 .= '</span>' . $tabline;
+			$lain2 = $tabline . ' | ' //'<input type="radio">' 
+				. $kosong . $labelDibawah . $kosong;
+			$input2 .= $tabline . $lain2
+					. '</span>' . $tabline;
 
 			# cantum dengan textbox
 			$input = '<input type="text" ' . $name . ' class="form-control">';
