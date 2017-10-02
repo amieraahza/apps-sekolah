@@ -35,6 +35,7 @@ class Ruangtamu extends \Aplikasi\Kitab\Kawal
 	{
 		# Set pemboleubah utama
 		$this->papar->tajuk = 'Ruangtamu';
+		$this->papar->senarai['modul'] = $this->tanya->jadualModul();
 
 		# pergi papar kandungan
 		$jenis = $this->papar->pilihTemplate($template=0);
