@@ -33,7 +33,6 @@
 		</select>
 	</div>
 	<div class="form-group">
-		<label class="sr-only" for="exampleInputPassword3">Password</label>
 		<input type="tetxbok" class="form-control" placeholder="- Name / IC Number -">
 	</div>
 	<div class="form-group">
