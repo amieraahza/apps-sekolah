@@ -12,7 +12,7 @@ class pelajar_Tanya extends \Aplikasi\Kitab\Tanya
 		return $senaraiMedan; # pulangkan pemboleubah
 	}
 
-	public function tatasusunanCariID($jadual, $medan, $cari, $susun) 
+	public function tatasusunanCariID($jadual, $medan, $cari, $susun)
 	{
 		# ada nilai
 		$hasil = array ( '0' => array (
@@ -65,7 +65,7 @@ class pelajar_Tanya extends \Aplikasi\Kitab\Tanya
 		return $hasil; # pulangkan pemboleubah
 	}
 
-	public function tatasusunanUbah2A($jadual, $medan, $cari, $susun) 
+	public function tatasusunanUbah2A($jadual, $medan, $cari, $susun)
 	{
 		# ada nilai - cantum semua tatasusunan dalam satu
 		$hasil = array (
@@ -437,7 +437,7 @@ class pelajar_Tanya extends \Aplikasi\Kitab\Tanya
 					'jenis_medan' => 'select',
 					'jenis_data' => '- Relation -,Bapa,Ibu,Datok,Nenek,Bapa Saudara,Ibu Saudara,Lain-lain',
 					'label_dibawah' => '(Guardion/Mother Infomation)',
-					),	
+					),
 				);
 
 		$medan2 = array(); # tiada nilai
