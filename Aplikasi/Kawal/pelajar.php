@@ -31,6 +31,7 @@ class Pelajar extends \Aplikasi\Kitab\Kawal
 		$jadual = 'biodata_pelajar';
 		$this->papar->medanbaru = $this->tanya->medanbaru($jadual);
 		$this->papar->jadual = $jadual;
+		$this->papar->jenisBorang = 'baru';
 
 		/*# Semak data $this->papar->medanbaru
 		echo '<pre>$this->papar->medanbaru:<br>'; 
