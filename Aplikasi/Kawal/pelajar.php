@@ -96,5 +96,27 @@ class Pelajar extends \Aplikasi\Kitab\Kawal
 			//'mobile/mobile',$jenis,0); # $noInclude=0
 		//*/
 	}
+
+	function profil()
+	{
+		# Set pemboleubah utama
+		$jadual = 'biodata_pelajar';
+		$this->papar->senarai['List Student'] = $this->tanya->profil($jadual);
+		$this->papar->_jadual = $jadual;
+		$this->papar->jenisBorang = 'papar';		
+
+		/*# Semak data $this->papar->senarai['data']
+		echo '<pre>$this->papar->senarai['data']:<br>'; 
+		print_r($this->papar->senarai['data']);
+		echo '</pre>|';//*/
+
+		# Pergi papar kandungan
+		$jenis = $this->papar->pilihTemplate($template=0);
+		$this->papar->bacaTemplate(
+		//$this->papar->paparTemplate(
+			$this->_folder . '/profil_pelajar',$jenis,0); # $noInclude=0
+			//'mobile/mobile',$jenis,0); # $noInclude=0
+		//*/
+	}
 #==========================================================================================
 }
