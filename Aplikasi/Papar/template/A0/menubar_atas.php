@@ -1,5 +1,4 @@
 <?php 
-//$nav = 'data-toggle="dropdown" class="dropdown-toggle active"';
 $nav = 'class="dropdown-toggle" data-toggle="dropdown"';
 $url = URL;
 $kini = ( !isset($this->kini) ) ? null : $this->kini;
@@ -10,9 +9,10 @@ $icon['Barcode'] = '<span class="glyphicon glyphicon-barcode"></span>';
 $icon['Filter'] = '<span class="glyphicon glyphicon-filter"></span>';
 $icon['Stats'] = '<span class="glyphicon glyphicon-stats"></span>';
 ?>
+<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
 <ul class="<?php echo $classUL ?>">
 <li class="dropdown"><a <?php echo $nav ?> href="#">
-	<i class="fa fa-line-chart fa-2x" aria-hidden="true"></i>
+	<i class="fa fa-money fa-2x" aria-hidden="true"></i>
 	Student Finance</a></li>
 <li class="dropdown"><a <?php echo $nav ?> href="#">
 	<i class="fa fa-tachometer fa-2x" aria-hidden="true"></i>
@@ -20,9 +20,19 @@ $icon['Stats'] = '<span class="glyphicon glyphicon-stats"></span>';
 <li class="dropdown"><a <?php echo $nav ?> href="#">
 	<i class="fa fa-users fa-2x" aria-hidden="true"></i>
 	Staf</a></li>
-<li><a href="<?php echo URL ?>pelajar/daftarBaru">
+<li class="dropdown"><a <?php echo $nav ?> href="#">
 	<i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
-	Pendaftaran</a></li>
+	Pendaftaran<b class="caret"></b></a>
+	<ul class="dropdown-menu">
+	<li><a href="<?php echo URL ?>pelajar/daftarBaru">
+		<i class="fa fa-user-plus fa-2x" aria-hidden="true"></i>
+		Baru</a></li>
+	<li><a href="<?php echo URL ?>pelajar/profil">
+		<i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>
+		Profil</a></li>
+	<li><a></a></li>
+	</ul>
+</li>
 <li class="dropdown"><a <?php echo $nav ?> href="#">
 	<i class="fa fa-trophy fa-2x" aria-hidden="true"></i>
 	Ko-kurikulum</a></li>
@@ -30,3 +40,4 @@ $icon['Stats'] = '<span class="glyphicon glyphicon-stats"></span>';
 	<i class="fa fa-exclamation-triangle fa-2x" aria-hidden="true"></i>
 	Displin</a></li>
 </ul>
+<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
