@@ -17,7 +17,11 @@ Assalamualaikum dan Selamat sejahtera
 Tahniah anak anda <?php echo $this->data['anak'] ?> telah berjaya
 mendaftar menjadi pelajar di Sek Darul Iman.
 		</textarea>
-		<label>140</label><input type="submit" class="btn btn-default" value="SEND THIS EMAIL">
+		<!-- pre class="help-block">140</pre -->
+		<div class="input-group input-group-sm">
+			<span class="input-group-addon">140</span>
+			<input type="submit" class="btn btn-default" value="SEND THIS SMS...">
+		</div>
 	</div>
 </div>
 <!-- tamat - input tengah ------------------------------------------------------------------------------------------- -->
