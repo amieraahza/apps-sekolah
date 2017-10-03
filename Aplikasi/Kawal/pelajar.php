@@ -97,24 +97,28 @@ class Pelajar extends \Aplikasi\Kitab\Kawal
 		//*/
 	}
 
-	function profil()
+	public function papar($profil,$id)
 	{
 		# Set pemboleubah utama
 		$jadual = 'biodata_pelajar';
-		$this->papar->senarai['List Student'] = $this->tanya->profil($jadual);
+		$this->papar->senarai = $this->tanya->profilSeorang($jadual, $id);
 		$this->papar->_jadual = $jadual;
 		$this->papar->jenisBorang = 'papar';		
+		$this->papar->tajukbesar1 = 'Student Infomation';
+		$this->papar->tajukbesar2 = 'Profil';
+		$this->papar->tajukbesar3 = 'Father Infomation';
+		$this->papar->tajukbesar4 = 'Mother Infomation';
 
-		/*# Semak data $this->papar->senarai['data']
-		echo '<pre>$this->papar->senarai['data']:<br>'; 
-		print_r($this->papar->senarai['data']);
+		/*# Semak data $this->papar->senarai
+		echo '<pre>$this->papar->senarai:<br>'; 
+		print_r($this->papar->senarai);
 		echo '</pre>|';//*/
 
 		# Pergi papar kandungan
 		$jenis = $this->papar->pilihTemplate($template=0);
 		$this->papar->bacaTemplate(
 		//$this->papar->paparTemplate(
-			$this->_folder . '/profil_pelajar',$jenis,0); # $noInclude=0
+			$this->_folder . '/papar_profil',$jenis,0); # $noInclude=0
 			//'mobile/mobile',$jenis,0); # $noInclude=0
 		//*/
 	}
