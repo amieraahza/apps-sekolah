@@ -113,5 +113,34 @@ class Surat extends \Aplikasi\Kitab\Kawal
 			//'mobile/mobile',$jenis,0); # $noInclude=0
 		//*/
 	}
+#------------------------------------------------------------------------------------------------
+	function profil($pilih)
+	{
+		# Set pemboleubah utama
+		$jadual = 'biodata_pelajar';
+		$this->papar->data = $this->tanya->suratHebahan($jadual);
+		$this->papar->jadual = $jadual;
+		$this->papar->jenisBorang = 'papar';
+
+		/*# Semak data $this->papar->data
+		echo '<pre>$this->papar->data:<br>'; 
+		print_r($this->papar->data);
+		echo '</pre>|';//*/
+
+		# pilih hantar tawaran melalui apache_child_terminate
+		if ($pilih == 'surat'): $fail = 'hebahan_surat';
+		elseif ($pilih == 'sms'): $fail = 'hebahan_sms';
+		elseif ($pilih == 'email'): $fail = 'hebahan_email';
+		endif;//*/
+
+		# Pergi papar kandungan
+		$jenis = $this->papar->pilihTemplate($template=0);
+		$this->papar->bacaTemplate(
+		//$this->papar->paparTemplate(
+			$this->_folder . '/' . $fail,$jenis,0); # $noInclude=0
+			//'mobile/mobile',$jenis,0); # $noInclude=0
+		//*/
+	}
+#------------------------------------------------------------------------------------------------
 #==========================================================================================
 }
