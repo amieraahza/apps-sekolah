@@ -675,18 +675,18 @@ class Html
 	function paparURL($key, $data, $myTable = null, $cariA= null, $cariB = null)
 	{
 		# kod warna butang
-		$warnaPrimary = $this->butang('birutua');
-		$warnaDanger = $this->butang('merah');
-		$warnaSuccess = $this->butang('hijau');
+		$warnaPrimary = $this->butang('primary'); # birutua
+		$warnaDanger = $this->butang('danger'); # merah
+		$warnaSuccess = $this->butang('success'); # hijau
 
 		if ($key=='no')
 		{# primary key
 				$k0 = URL . 'pelajar/papar/profil/' . $data;
-				$p0 = '<a target="_blank" href="' . $k0 . '">' 
+				$p0 = '<a target="_blank" href="' . $k0 . '">'
 				. $this->iconFA(0) . '</a>&nbsp;';
 
 				$k1 = URL . 'pelajar/ubah/profil/' . $data;
-				$p1 = '<a target="_blank" href="' . $k1 . '">' 
+				$p1 = '<a target="_blank" href="' . $k1 . '">'
 				. $this->iconFA(1) . '</a>&nbsp;';
 
 			?><td><?php echo $p0 . $p1 ?></td><?php
@@ -772,7 +772,7 @@ class Html
 		}//*/
 	}
 #==========================================================================================
-	public function butang($warna = 'birumuda',$saiz = 'kecil')
+	public function butang($warna = 'info',$saiz = 'kecil')
 	{ 
 		$btnW['primary'] = 'btn btn-primary'; # birutua
 		$btnW['info'] = 'btn btn-info'; # birumuda - utama
@@ -795,10 +795,10 @@ class Html
 	public function pautanTD($target, $href, $class, $data)
 	{
 		if ($target == null) { $t = ''; }
-		else { $t = ' target="' . $target . '"';
+		else { $t = ' target="' . $target . '"'; }
 	
 		?><a<?php echo $t ?> href="<?php echo $href ?>" class="<?php
-		echo $class ?>"><?php echo $data ?></a><?php	
+		echo $class ?>"><?php echo $data ?></a><?php
 	}
 #==========================================================================================
 	public function posdaftar($data)
