@@ -311,9 +311,27 @@ class Surat_Tanya extends \Aplikasi\Kitab\Tanya
 		return $medan; # pulangkan pemboleubah
 	}
 #------------------------------------------------------------------------------------------------------------------
-	public function datapelajar($jadual)
+	public function suratHebahan($jadual)
 	{
 		# ada nilai
+		$medan = array (
+			'nama_waris1' => 'ADZUAN SHAH BIN BAOO',
+			'nama_waris2' => 'ZURAINI BINTI MOHD MOKHTAR',
+			'nohp_waris' => '0123457890',
+			'email_waris' => 'utama@duduk.mana',
+			'nohp_waris1' => '0130123456',
+			'email_waris1' => 'bapa@duduk.mana',
+			'nohp_waris2' => '014123456',
+			'email_waris2' => 'ibu@@duduk.mana',
+			'nohp_anak' => '0152345678',
+			'anak' => 'PUTERI AFEERA DAYANA',
+			'nokp_anak' => '091026101034',
+			'darjah' => '1',
+			'tahun' => '2016',
+			'kerani_nama' => 'Siti Faridah Binti Mohd Yusof',
+			'kerani_pangkat' => 'Register',
+		);
+
 		$medan2 = array(); # tiada nilai
 
 		return $medan; # pulangkan pemboleubah
