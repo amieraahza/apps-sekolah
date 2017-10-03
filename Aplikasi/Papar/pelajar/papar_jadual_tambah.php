@@ -16,7 +16,6 @@
 		}
 	# papar data $row ------------------------------------------------
 	?><tbody><tr><td><input type="checkbox"></td><?php
-		echo $tabline = "\n\t\t";
 		foreach ( $row[$kira] as $key=>$data ) 
 		{
 			echo '<td>' . $data . '</td>';
