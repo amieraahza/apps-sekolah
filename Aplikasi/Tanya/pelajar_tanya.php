@@ -920,9 +920,9 @@ class Pelajar_Tanya extends \Aplikasi\Kitab\Tanya
 					'lesb employee' => null,
 					'international' => null,
 					'&nbsp;' => null,
-					'..' => null,
-					'...' => null,
-					'....' => null,
+					'&nbsp;&nbsp;' => null,
+					'&nbsp;&nbsp;&nbsp;' => null,
+					'&nbsp;&nbsp;&nbsp;&nbsp;' => null,
 				),),
 			'bhgn5' => array (
 				'0' => array (
