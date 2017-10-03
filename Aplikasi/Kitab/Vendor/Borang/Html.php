@@ -676,7 +676,6 @@ class Html
 	{
 		if ($key=='no')
 		{# primary key
-				//$k1 = URL . 'pelajar/ubah/profil/' . $myTable . '/' . $data;
 				$k0 = URL . 'pelajar/papar/profil/' . $data;
 				$p0 = '<a target="_blank" href="' . $k0 . '">' 
 				. $this->iconFA(0) . '</a>&nbsp;';
@@ -696,7 +695,6 @@ class Html
 				. $this->butang . '">' . $data . '</a>';
 
 			?><td><?php echo $pautan ?></td><?php
-
 		}
 		elseif ($key=='pegawaiborang')
 		{
@@ -776,7 +774,7 @@ class Html
 		$merah = 'btn btn-danger btn-mini';
 		$hijau = 'btn btn-success btn-mini';
 		$btn = $birumuda;
-		
+
 		return $btn;
 	}
 #==========================================================================================
@@ -784,7 +782,7 @@ class Html
 	{# icon font awesome
 		$a[0] = '<i class="fa fa-user-o" aria-hidden="true"></i>';
 		$a[1] = '<i class="fa fa-pencil" aria-hidden="true"></i>';
-	
+
 		return $a[$pilih];
 	}
 #==========================================================================================
