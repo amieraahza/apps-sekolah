@@ -672,42 +672,28 @@ class Html
 	}
 	# tamat untuk kod php+html 
 #==========================================================================================
-	function paparURL($key, $data, $myTable = null, $cariBatch = null, $namaPegawai = null)
+	function paparURL($key, $data, $myTable = null, $cariA= null, $cariB = null)
 	{
-		# set pembolehubah Sesi
-		//$pengguna = \Aplikasi\Kitab\Sesi::get('namaPegawai');
-		//$level = \Aplikasi\Kitab\Sesi::get('levelPegawai');
-		//echo "<br> \$pengguna : $pengguna | \$level = $level";
+		if ($key=='no')
+		{# primary key
+				//$k1 = URL . 'pelajar/ubah/profil/' . $myTable . '/' . $data;
+				$k0 = URL . 'pelajar/papar/profil/' . $data;
+				$p0 = '<a target="_blank" href="' . $k0 . '">' 
+				. $this->iconFA(0) . '</a>&nbsp;';
 
-		# butang 
-		$birutua = 'btn btn-primary btn-mini';
-		$birumuda = 'btn btn-info btn-mini';
-		$merah = 'btn btn-danger btn-mini';
+				$k1 = URL . 'pelajar/ubah/profil/' . $data;
+				$p1 = '<a target="_blank" href="' . $k1 . '">' 
+				. $this->iconFA(1) . '</a>&nbsp;';
 
-		/*if($cariBatch==null)
-		{
-			//echo '<br> Ada masalah teknikal pada $cariBatch <br>'; exit();
+			?><td><?php echo $p0 . $p1 ?></td><?php
 			?><td><?php echo $data ?></td><?php
-		}
-		elseif($namaPegawai==null)
-		{
-			//echo '<br> Ada masalah teknikal pada $namaPegawai <br>'; exit();
-			?><td><?php echo $data ?></td><?php
-		}//*/
-		if ($key=='id')
-		{
-				$k1 = URL . 'akaun/ubah/' . $myTable . '/' . $data;
-				$btn = $birutua;
-				$a = '<i class="fa fa-pencil" aria-hidden="true"></i>Ubah1';
-				$pautan = '<a target="_blank" href="' . $k1 . '" class="' . $btn . '">' . $a . '</a>#' . $data;
-
-			?><td><?php echo $pautan ?></td><?php
 		}
 		elseif(in_array($key,array('posdaftar')))
 		{
 				list($k,$btn) = $this->posdaftar($data);
 				$pautan = ($data==null) ? $data :
-				'<a target="_blank" href="' . $k[3] . '" class="' . $btn . '">' . $data . '</a>';
+				'<a target="_blank" href="' . $k[3] . '" class="' 
+				. $this->butang . '">' . $data . '</a>';
 
 			?><td><?php echo $pautan ?></td><?php
 
@@ -763,6 +749,45 @@ class Html
 
 	}
 #==========================================================================================
+	public function paparLink($jenis = '0')
+	{
+		# papar URL yang terlibat
+		$k[0] = URL . 'kawalan/posdaftar/';
+		
+		if ($jenis == '2')
+		{	
+			echo $pautan = '<a target="_blank" href="#" class="' 
+			. $this->butang . '">' . $a . '</a>';
+		}
+		elseif($jenis == '1')
+		{
+			echo '<td>' . $a[0] . '&nbsp;' . $a[1] . '</td>';
+		}
+		else
+		{
+			echo '<td><input type="checkbox" value="x"></td>';
+		}//*/
+	}
+#==========================================================================================
+	public function butang()
+	{# butang 
+		$birutua = 'btn btn-primary btn-mini';
+		$birumuda = 'btn btn-info btn-mini';
+		$merah = 'btn btn-danger btn-mini';
+		$hijau = 'btn btn-success btn-mini';
+		$btn = $birumuda;
+		
+		return $btn;
+	}
+#==========================================================================================
+	public function iconFA($pilih)
+	{# icon font awesome
+		$a[0] = '<i class="fa fa-user-o" aria-hidden="true"></i>';
+		$a[1] = '<i class="fa fa-pencil" aria-hidden="true"></i>';
+	
+		return $a[$pilih];
+	}
+#==========================================================================================
 	public function posdaftar($data)
 	{
 		$k[0] = URL . 'kawalan/posdaftar/' . $data;
@@ -771,11 +796,7 @@ class Html
 		$k[3] = 'https://track.aftership.com/malaysia-post/' . $data;
 
 		# butang 
-		$birutua = 'btn btn-primary btn-mini';
-		$birumuda = 'btn btn-info btn-mini';
-		$merah = 'btn btn-danger btn-mini';
-		$btn = $birutua;
-		//$a = '<i class="fa fa-pencil" aria-hidden="true"></i>' . $data;
+		$btn = $this->butang('birumuda');
 
 		return array($k,$btn);
 	}
