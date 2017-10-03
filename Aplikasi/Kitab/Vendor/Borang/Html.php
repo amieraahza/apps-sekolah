@@ -674,6 +674,11 @@ class Html
 #==========================================================================================
 	function paparURL($key, $data, $myTable = null, $cariA= null, $cariB = null)
 	{
+		# kod warna butang
+		$warnaPrimary = $this->butang('birutua');
+		$warnaDanger = $this->butang('merah');
+		$warnaSuccess = $this->butang('hijau');
+
 		if ($key=='no')
 		{# primary key
 				$k0 = URL . 'pelajar/papar/profil/' . $data;
@@ -704,9 +709,9 @@ class Html
 			if ($data == null):
 				?><td>&nbsp;</td><?php
 			else:?><td><?php
-				?><a href="<?php echo $k1 ?>" class="btn btn-primary btn-mini"><?php echo $data ?></a><?php
-				?><a target="_blank" href="<?php echo $k2 ?>" class="btn btn-danger btn-mini">Batch Non A1</a><?php
-				?><a target="_blank" href="<?php echo $k3 ?>" class="btn btn-success btn-mini">Batch A1</a><?php
+				$this->pautanTD(null,$k1,$warnaPrimary,$data);
+				$this->pautanTD('_blank',$k2,$warnaDanger,'Batch Non A1');
+				$this->pautanTD('_blank',$k3,$warnaSuccess,'Batch A1');
 				?></td><?php
 			endif;
 		}
@@ -718,9 +723,9 @@ class Html
 			if ($data == null):
 				?><td>&nbsp;</td><?php
 			else:?><td><?php
-				?><a href="<?php echo $k1 ?>" class="btn btn-primary btn-mini"><?php echo $data ?></a><?php
-				?><a target="_blank" href="<?php echo $k2 ?>" class="btn btn-danger btn-mini">Batch Non A1</a><?php
-				?><a target="_blank" href="<?php echo $k3 ?>" class="btn btn-success btn-mini">Batch A1</a><?php
+				$this->pautanTD(null,$k1,$warnaPrimary,$data);
+				$this->pautanTD('_blank',$k2,$warnaDanger,'Batch Non A1');
+				$this->pautanTD('_blank',$k3,$warnaSuccess,'Batch A1');
 				?></td><?php
 			endif;
 		}
@@ -731,8 +736,8 @@ class Html
 			if ($data == null):
 				?><td>&nbsp;</td><?php
 			else:?><td><?php
-				?><a href="<?php echo $k1 ?>" class="btn btn-primary btn-mini"><?php echo $data ?></a><?php
-				?><a target="_blank" href="<?php echo $k2 ?>" class="btn btn-danger btn-mini">cetak</a><?php
+				$this->pautanTD(null,$k1,$warnaPrimary,$data);
+				$this->pautanTD('_blank',$k2,$warnaDanger,'cetak');
 				?></td><?php
 			endif;
 		}
@@ -767,14 +772,15 @@ class Html
 		}//*/
 	}
 #==========================================================================================
-	public function butang()
-	{# butang 
-		$birutua = 'btn btn-primary btn-mini';
-		$birumuda = 'btn btn-info btn-mini';
-		$merah = 'btn btn-danger btn-mini';
-		$hijau = 'btn btn-success btn-mini';
-		$btn = $birumuda;
-
+	public function butang($warna = 'birumuda',$saiz = 'kecil')
+	{ 
+		$btnW['primary'] = 'btn btn-primary'; # birutua
+		$btnW['info'] = 'btn btn-info'; # birumuda - utama
+		$btnW['danger'] = 'btn btn-danger'; # merah
+		$btnW['success'] = 'btn btn-success'; #hijau
+		$btnS['kecil'] = ' btn-mini'; # - utama
+		
+		$btn = $btnW[$warna] . $btnS[$saiz];
 		return $btn;
 	}
 #==========================================================================================
@@ -784,6 +790,15 @@ class Html
 		$a[1] = '<i class="fa fa-pencil" aria-hidden="true"></i>';
 
 		return $a[$pilih];
+	}
+#==========================================================================================
+	public function pautanTD($target, $href, $class, $data)
+	{
+		if ($target == null) { $t = ''; }
+		else { $t = ' target="' . $target . '"';
+	
+		?><a<?php echo $t ?> href="<?php echo $href ?>" class="<?php
+		echo $class ?>"><?php echo $data ?></a><?php	
 	}
 #==========================================================================================
 	public function posdaftar($data)
