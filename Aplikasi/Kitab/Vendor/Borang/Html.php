@@ -589,7 +589,7 @@ class Html
 			?><!-- Jadual <?php echo $myTable ?>  --><?php
 			for ($kira=0; $kira < count($row); $kira++)
 			{// ulang untuk $kira++ ?>
-			<table border="1" class="excel" id="example">
+			<table border="1" class="<?php echo $classTable ?>" id="example">
 			<tbody><?php foreach ( $row[$kira] as $key=>$data ):?>
 			<tr>
 			<td><?php echo $key ?></td>
