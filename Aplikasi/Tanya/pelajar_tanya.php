@@ -865,9 +865,93 @@ class Pelajar_Tanya extends \Aplikasi\Kitab\Tanya
 
 		$medan2 = array(); # tiada nilai
 
-		return $medan; # pulangkan pemboleubah
-		
+		return $medan; # pulangkan pemboleubah	
 	}
+#------------------------------------------------------------------------------------------------------------------
+	public function profilSeorang($jadual,$id)
+	{
+		$kosong = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
+			. '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
+			. '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
+			. '';
+		# ada nilai
+		$medan = array(
+			'bhgn1' => array (
+				'0' => array (
+					'name' => 'JANET',		
+					'matric' => 'JA0101',
+					'ic no' => '150101101002',
+					'school' => 'Sekolah Kebangsaan Darul Iman',
+					'class' => '2 Anggerik / 2016',
+				),),
+			'bhgn2' => array (
+				'0' => array (
+					'register' => '2016-08-01',		
+					'end' => '0000-00-00',
+					'status' => 'student',
+					'school account' => null,
+					'&nbsp;' => null,
+				),),
+			'bhgn3' => array (
+				'0' => array (
+					'gender' => 'female',
+					'race' => 'cina',
+					'religion' => 'budda',
+					'birth date' => '2015-01-01',
+					'birth place' => 'MUAR',
+					'birth cert' => '-',
+					'telephone' => '06-95123654',
+					'handphone (parent)' => '0123456789',
+					'email (parent)' => 'utama@duduk.mana',
+					'address' => 'JALAN SATU,TAMAN DUA',
+					'city' => 'MUAR',
+					'postcode' => '84000',
+					'state' => 'JOHOR',
+				),),
+			'bhgn4' => array (
+				'0' => array (
+					'transportation' => $kosong,
+					'illness / alergic' => $kosong,
+					'previous school' => $kosong,
+					'hostel' => $kosong,
+					'manjaria student' => $kosong,
+					'lgb employee' => $kosong,
+					'lesb employee2' => null,
+					'lesb employee' => null,
+					'international' => null,
+					'&nbsp;' => null,
+					'..' => null,
+					'...' => null,
+					'....' => null,
+				),),
+			'bhgn5' => array (
+				'0' => array (
+					'name' => 'JAMES BOND',
+					'ic no' => '120111001',
+					'handphone' => '013987654',
+					'email' => 'bapa@duduk.mana',
+					'occupation' => null,
+					'employer' => null,
+					'address' => null,
+					'telephone' => '06951365',
+				),),
+			'bhgn6' => array (
+				'0' => array (
+					'name' => 'MARRY ME',
+					'ic no' => '120111002',
+					'handphone' => '014987654',
+					'email' => 'ibu@duduk.mana',
+					'occupation' => 'surirumah',
+					'employer' => null,
+					'address' => null,
+					'telephone' => '06951365',
+				),),
+		);
+
+		$medan2 = array(); # tiada nilai
+
+		return $medan; # pulangkan pemboleubah
+	}	
 #------------------------------------------------------------------------------------------------------------------
 #==========================================================================================
 }
