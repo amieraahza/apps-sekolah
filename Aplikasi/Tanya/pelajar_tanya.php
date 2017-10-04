@@ -217,69 +217,6 @@ class Pelajar_Tanya extends \Aplikasi\Kitab\Tanya
 		return $posmen; # pulangkan nilai
 	}
 #------------------------------------------------------------------------------------------------------------------
-	public function medanCari($cariID) 
-	{ 
-		# Set pemboleubah untuk sql
-        $senaraiMedan = ''
-			. 'msic,keterangan,'
-			. ' concat_ws("|",' . "\r"
-			. ' 	concat_ws("","",seksyen),' . "\r"
-			. ' 	concat_ws("","",bahagian),' . "\r"
-			. ' 	concat_ws("","",kumpulan),' . "\r"
-			. ' 	concat_ws("","",kelas)' . "\r"
- 			. ' ) as jenis,'
-			. 'msic2000,'
-			. 'notakaki'
-			. '';
-
-		# pulangkan pemboleubah
-		return $senaraiMedan;
-	}
-#------------------------------------------------------------------------------------------------------------------
-	public function medanCari2($cariID) 
-	{ 
-		# Set pemboleubah untuk sql
-        $senaraiMedan = ''
-			. 'msic,kod_produk,keterangan,'
-			. ' concat_ws("-",' . "\r"
-			. ' 	concat_ws("","",msic),' . "\r"
-			. ' 	concat_ws("","",p),' . "\r"
-			. ' 	concat_ws("","",a)' . "\r"
- 			. ' ) as jenis,'
-			. 'mcpa2005,unit,code'
-			. '';
-
-		# pulangkan pemboleubah
-		return $senaraiMedan;
-	}
-#------------------------------------------------------------------------------------------------------------------
-	public function tukar_data_xml($dataCantum,$xml_user_info)
-	{
-		# function call to convert array to xml
-		$xmlData = new \Aplikasi\Kitab\Tatasusunan;
-		$xmlData->array_to_xml($dataCantum,$xml_user_info);
-
-		# saving generated xml file
-		//$namafail = 'sumber/fail/xml/emsic2008.xml';
-		$namafail = 'sumber/fail/xml/emcpa2009.xml';
-		$xml_file = $xml_user_info->asXML($namafail);
-		//$xml_file = $xml_user_info->asXML();
-
-		# success and error message based on xml creation
-		if($xml_file)
-		{
-			echo 'XML file have been generated successfully.'
-			. '<a target="_blank" href="' . URL . $namafail . '">Click here</a> | '
-			. '<a href="' . URL . 'ruangtamu/pelawat">Ruang Legar</a>';
-			//echo $xml_file;
-		}
-		else
-		{
-			echo 'XML file generation error.';
-		}
-		//*/
-	}
-#------------------------------------------------------------------------------------------------------------------
 	public function medanbaru($jadual)
 	{
 		# ada nilai
@@ -371,15 +308,11 @@ class Pelajar_Tanya extends \Aplikasi\Kitab\Tanya
 					'jenis_medan' => 'textbox',
 					'jenis_data' => null,
 					),
-				'alamat1' => array(
-					'nama_label' => 'Address (Line 1)*',
-					'jenis_medan' => 'textbox',
+				'alamat' => array(
+					'nama_label' => 'Address*',
+					'jenis_medan' => 'textarea',
 					'jenis_data' => null,
-					),
-				'alamat2' => array(
-					'nama_label' => 'Address (Line 2)',
-					'jenis_medan' => 'textbox',
-					'jenis_data' => null,
+					'label_dibawah' => null,
 					),
 				'bandar' => array(
 					'nama_label' => 'City*',
@@ -402,41 +335,53 @@ class Pelajar_Tanya extends \Aplikasi\Kitab\Tanya
 					'jenis_data' => 'Asthmatic,Heart,Skin,Allergic',
 					'label_dibawah' => 'Others : ',
 					),
-				'nama_waris1' => array(
-					'nama_label' => 'Name',
-					'jenis_medan' => 'textbox',
+				'waris1_nama-waris2_nama' => array(
+					'nama_label' => 'Name Guardian',
+					'jenis_medan' => 'textbox2textbox',
 					'jenis_data' => null,
-					'label_dibawah' => '(Guardion/Father Infomation)',
+					'label_dibawah' => 'Father|Mother',
 					),
-				'no_kp_waris1' => array(
+				'waris1_no_kp-waris2_no_kp' => array(
 					'nama_label' => 'IC No/Passport',
-					'jenis_medan' => 'textbox',
+					'jenis_medan' => 'textbox2textbox',
 					'jenis_data' => null,
-					'label_dibawah' => '(Guardion/Father Infomation)',
+					'label_dibawah' => 'Father|Mother',
 					),
-				'hubungan_waris1' => array(
+				'waris1_hubungan-waris2_hubungan' => array(
 					'nama_label' => 'Relation*',
-					'jenis_medan' => 'select',
+					'jenis_medan' => 'select2select',
 					'jenis_data' => '- Relation -,Bapa,Ibu,Datok,Nenek,Bapa Saudara,Ibu Saudara,Lain-lain',
-					'label_dibawah' => '(Guardion/Father Infomation)',
+					'label_dibawah' => 'Father|Mother',
 					),
-				'nama_waris2' => array(
-					'nama_label' => 'Name',
-					'jenis_medan' => 'textbox',
+				'waris1_notel-waris2_notel' => array(
+					'nama_label' => 'No. Tel',
+					'jenis_medan' => 'textbox2textbox',
 					'jenis_data' => null,
-					'label_dibawah' => '(Guardion/Mother Infomation)',
+					'label_dibawah' => 'Father|Mother',
 					),
-				'no_kp_waris2' => array(
-					'nama_label' => 'IC No/Passport',
-					'jenis_medan' => 'textbox',
+				'waris1_hp-waris2_hp' => array(
+					'nama_label' => 'Handphone',
+					'jenis_medan' => 'textbox2textbox',
 					'jenis_data' => null,
-					'label_dibawah' => '(Guardion/Mother Infomation)',
+					'label_dibawah' => 'Father|Mother',
 					),
-				'hubungan_waris2' => array(
-					'nama_label' => 'Relation*',
-					'jenis_medan' => 'select',
-					'jenis_data' => '- Relation -,Bapa,Ibu,Datok,Nenek,Bapa Saudara,Ibu Saudara,Lain-lain',
-					'label_dibawah' => '(Guardion/Mother Infomation)',
+				'waris1_email-waris2_email' => array(
+					'nama_label' => 'Email',
+					'jenis_medan' => 'textbox2textbox',
+					'jenis_data' => null,
+					'label_dibawah' => 'Father|Mother',
+					),
+				'waris1_pekerjaan-waris2_pekerjaan' => array(
+					'nama_label' => 'Occupation',
+					'jenis_medan' => 'textbox2textbox',
+					'jenis_data' => null,
+					'label_dibawah' => 'Father|Mother',
+					),
+				'waris1_majikan-waris2_majikan' => array(
+					'nama_label' => 'Employer',
+					'jenis_medan' => 'textbox2textbox',
+					'jenis_data' => null,
+					'label_dibawah' => 'Father|Mother',
 					),
 				);
 
