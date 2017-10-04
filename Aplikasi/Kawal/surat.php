@@ -18,6 +18,7 @@ class Surat extends \Aplikasi\Kitab\Kawal
 		echo '<hr> Nama class : ' . namaClass($this) . '<hr>';
 
 		# Pergi papar kandungan
+		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		//$this->paparKandungan('index');
 	}
 
