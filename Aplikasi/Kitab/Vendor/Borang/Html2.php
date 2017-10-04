@@ -1,6 +1,6 @@
 <?php
 namespace Aplikasi\Kitab; //echo __NAMESPACE__; 
-class Html
+class Html2
 {
 #==========================================================================================
 	function inputTextMedan($jadual, $key)
@@ -174,14 +174,11 @@ class Html
 		$namaMedan = 'name="' . $myTable . '[' . $nama . ']" '
 				   . 'id="' . $nama . '"';
 
-		//$papar = null;
-			
 		if ($nama == 'level')
 		{
-			/*
-			$papar = '<select ' . $namaMedan . '>';
+			/*$papar = '<select ' . $namaMedan . '>';
 			$senaraiPengguna= array('baru');
-			
+
 			foreach ($senaraiPengguna as $key => $value)
 			{
 				$papar .= '<option value="' . $value . '"';
@@ -189,10 +186,8 @@ class Html
 				$papar .= ucfirst(strtolower($value));
 				$papar .= '</option>';
 			}
-			$papar .= '</select>';
-			*/
+			$papar .= '</select>';*/
 			$papar = null;
-
 		}
 		elseif ($nama == 'jantina')
 		{
@@ -350,24 +345,6 @@ class Html
 				   . $tabline2 . '</div>'
 				   . '';
 		}
-		# kod html untuk bukan input type
-		elseif ( in_array($key,array('keterangan')) )
-		{#kod untuk papar jadual
-			//echo '$paparSahaja-><pre>'; print_r($paparSahaja) . '<pre>';
-			//var_export($paparSahaja) . '<pre>';
-			# set nama class untuk jadual
-			$jadual1 = ' table-striped'; # tambah zebra
-			$jadual2 = ' table-bordered';
-			$jadual3 = ' table-hover';
-			$jadual4 = ' table-condensed'; 
-			$classJadual = 'table' . $jadual4 . $jadual3;
-			foreach ($paparSahaja as $myTable => $bilang)
-			{# mula ulang $bilang
-				$this->papar_jadual($bilang, $myTable, $pilih=4, $classJadual);
-			}# tamat ulang $bilang //*/
-
-			$input = '';
-		}
 		elseif ( in_array($key,array('alamat_baru')) )
 		{#kod untuk  blockquote
 			$input = '<blockquote>'
@@ -382,168 +359,5 @@ class Html
 
 		return $input;
 	}
-
-	# mula untuk kod php+html 
-	function papar_jadual($row, $myTable, $pilih, $classTable = null)
-	{
-		if ($pilih == 1) 
-		{
-	//////////////////////////////////////////////////////////////////////////////////////////////////////////
-			?><!-- Jadual <?php echo $myTable ?> -->
-			<table border="1" class="excel" id="example">
-			<?php $printed_headers = false; # mula bina jadual
-			#-----------------------------------------------------------------
-			for ($kira=0; $kira < count($row); $kira++)
-			{	# print the headers once: 	
-				if ( !$printed_headers ) : ?><thead><tr>
-			<th>#</th><?php foreach ( array_keys($row[$kira]) as $tajuk ) :
-			?><th><?php echo $tajuk ?></th>
-			<?php endforeach; ?></tr></thead>
-			<?php	$printed_headers = true; 
-				endif;
-			#- print the data row --------------------------------------------
-			?><tbody><tr>
-			<td><?php echo $kira+1 ?></td>	
-			<?php foreach ( $row[$kira] as $key=>$data ) : 
-			?><td><?php echo $data ?></td>
-			<?php endforeach; ?></tr></tbody>
-			<?php
-			}#-----------------------------------------------------------------
-			?></table><?php echo "\r" ?><!-- Jadual <?php echo $myTable ?> --><?php
-	//////////////////////////////////////////////////////////////////////////////////////////////////////////
-		} elseif ($pilih == 2) {
-	//////////////////////////////////////////////////////////////////////////////////////////////////////////
-			?><!-- Jadual <?php echo $myTable ?> -->
-			<table border="1" class="excel" id="example"><?php
-			$printed_headers = false; # mula bina jadual
-			#-----------------------------------------------------------------
-			for ($kira=0; $kira < count($row); $kira++)
-			{	# cetak tajuk hanya sekali sahaja :
-				if ( !$printed_headers ) : ?>
-			<thead><tr>
-			<th>#</th><?php
-					foreach ( array_keys($row[$kira]) AS $tajuk ) 
-					{ 	if ( !is_int($tajuk) ) :
-							$paparTajuk = ($tajuk=='nama') ?
-							$tajuk . '(jadual:' . $myTable . ')'
-							: $tajuk; ?>
-			<th><?php echo $paparTajuk ?></th>
-			<?php		endif;
-					}
-			?></tr></thead><?php
-					$printed_headers = true; 
-				endif; 
-			#- cetak hasil $data ---------------------------------------------?>
-			<tbody><tr>
-			<td><?php echo $kira+1 ?></td>	
-			<?php
-				foreach ( $row[$kira] AS $key=>$data ) 
-				{
-					if ($key=='sidap') :
-						$sidap= $data;
-						$ssm = substr($data,0,12); 
-					elseif ($key=='nama') :
-						$syarikat = $data;
-					endif;
-					?><td><?php echo $data ?></td>
-			<?php
-				} 
-				?></tr></tbody>
-			<?php
-			}
-			#-----------------------------------------------------------------
-			?></table><!-- Jadual <?php echo $myTable ?> --><?php
-	//////////////////////////////////////////////////////////////////////////////////////////////////////////
-		} elseif ($pilih == 3) {
-	//////////////////////////////////////////////////////////////////////////////////////////////////////////
-			?><!-- Jadual <?php echo $myTable ?>  --><?php
-			for ($kira=0; $kira < count($row); $kira++)
-			{// ulang untuk $kira++ ?>
-			<table border="1" class="excel" id="example">
-			<tbody><?php foreach ( $row[$kira] as $key=>$data ):?>
-			<tr>
-			<td><?php echo $key ?></td>
-			<td><?php echo $data ?></td>
-			</tr>
-			<?php endforeach; ?></tbody>
-			</table>
-			<?php
-			}# ulang untuk $kira++ ?>
-			<!-- Jadual <?php echo $myTable ?> --><?php
-	//////////////////////////////////////////////////////////////////////////////////////////////////////////
-		} elseif ($pilih == 4) { 
-	//////////////////////////////////////////////////////////////////////////////////////////////////////////
-			?><!-- Jadual <?php echo $myTable ?> -->
-			<table class="<?php echo $classTable ?>">
-			<?php $printed_headers = false; # mula bina jadual
-			#-----------------------------------------------------------------
-			for ($kira=0; $kira < count($row); $kira++)
-			{	# cetak tajuk hanya sekali sahaja :
-				if ( !$printed_headers ) : ?><thead><tr>
-			<th>#</th><?php foreach ( array_keys($row[$kira]) as $tajuk ) :
-			?><th><?php echo $tajuk ?></th><?php endforeach; 
-			?></tr></thead>
-			<?php	$printed_headers = true; 
-				endif;
-			# cetak hasil $data --------------------------------------------
-			?><tbody><tr>
-			<td><?php echo $kira+1 ?></td><?php 
-				foreach ( $row[$kira] as $key=>$data ) : 
-			?><td><?php echo $data ?></td><?php 
-				endforeach; ?>  
-			</tr></tbody>
-			<?php
-			}
-			#-----------------------------------------------------------------
-			?></table><?php echo "\r\t\t\t"; ?><!-- Jadual <?php echo $myTable ?> --><?php echo "\r\t\t\t";
-	//////////////////////////////////////////////////////////////////////////////////////////////////////////
-		} elseif ($jadual == 5) { 
-		# nilai akan dipulangkan balik
-			$bil_tajuk = $row['bil_tajuk'];// => 8
-			$bil_baris = $row['bil_baris']; 
-
-			$output  = null; 
-			//$output .= '<br>$bil_tajuk=' . $bil_tajuk;
-			//$output .= '<br>$bil_baris=' . $bil_baris;
-			$output .= '<table border="1" class="excel" id="example">
-			<thead><tr>
-			<th colspan="' . $bil_tajuk . '">
-			<strong>Jadual ' . $myTable . ' : ' . $bil_tajuk . '
-			</strong></th>
-			</tr></thead>';
-
-			# mula bina jadual
-			$printed_headers = false; 
-			#-----------------------------------------------------------------
-			for ($kira=0; $kira < $bil_baris; $kira++)
-			{
-				//print the headers once: 	
-				if ( !$printed_headers ) 
-				{##============================================================
-				$output .= "\r\t<thead><tr>\r\t<th>#</th>";
-				foreach ( array_keys($row[$kira]) as $tajuk ) :
-					$output .= "\r\t" . '<th>' . $tajuk . '</th>';
-				endforeach;
-				$output .= "\r\t" . '</tr></thead>';
-				##=============================================================
-					$printed_headers = true; 
-				}
-			#-----------------------------------------------------------------
-				//print the data row 
-				$output .= "\r\t<tbody><tr>\r\t<td>" . ($kira+1) . '</td>';
-				foreach ( $row[$kira] as $key=>$data ) :
-					$output .= "\r\t" . '<td>' . $data . '</td>';
-				endforeach; 
-				$output .= "\r\t" . '</tr></tbody>';
-			}
-			#-----------------------------------------------------------------
-			$output .= "\r\t" . '</table>';
-
-			return $output;
-
-		} # tamat if ($jadual == 5
-	}
-	# tamat untuk kod php+html 
-
 #==========================================================================================
 }
