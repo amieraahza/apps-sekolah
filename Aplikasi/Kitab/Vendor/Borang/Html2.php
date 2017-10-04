@@ -7,7 +7,7 @@ class Html2
 	{	# istihar pembolehubah 
 		$name = 'name="medan[' . $jadual . '][' . $key . ']"'
 			  . ' id="' . $key . '"';
-		
+
 		$input = $key . '</td><td>'
 			   . '<input type="text" ' . $name . ' value="' 
 			   . $key . '" class="input-medium">';
