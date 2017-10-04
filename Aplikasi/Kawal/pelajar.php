@@ -26,16 +26,16 @@ class Pelajar extends \Aplikasi\Kitab\Kawal
 		$jenis = $this->papar->pilihTemplate($template=0);
 		$this->papar->bacaTemplate(
 		//$this->papar->paparTemplate(
-			$this->_folder . '/' . $fail,$jenis,0); # $noInclude=0
-			//'mobile/mobile',$jenis,0); # $noInclude=0	
-		//*/	
+			$this->_folder . '/' . $fail, $jenis, 0); # $noInclude=0
+			//'mobile/mobile',$jenis,0); # $noInclude=0
+		//*/
 	}
 
 	public function semakPembolehubah($senarai)
 	{
 		echo '<pre>$senarai:<br>'; 
 		print_r($senarai);
-		echo '</pre>|';//*/		
+		echo '</pre>|';//*/
 	}
 #==========================================================================================
 	function daftarBaru()
@@ -46,10 +46,8 @@ class Pelajar extends \Aplikasi\Kitab\Kawal
 		$this->papar->jadual = $jadual;
 		$this->papar->jenisBorang = 'baru';
 
-		# Semak data 
-		//$this->semakPembolehubah($this->papar->medanbaru);
-
 		# Pergi papar kandungan
+		//$this->semakPembolehubah($this->papar->medanbaru); # Semak data dulu
 		$this->paparKandungan('pendaftaran');
 	}
 
@@ -67,10 +65,8 @@ class Pelajar extends \Aplikasi\Kitab\Kawal
 		$this->papar->_jadual = $jadual;
 		$this->papar->jenisBorang = 'papar';		
 
-		# Semak data 
-		//$this->semakPembolehubah($this->papar->senarai);
-
 		# Pergi papar kandungan
+		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$this->paparKandungan('senarai_pelajar');
 	}
 
@@ -82,10 +78,8 @@ class Pelajar extends \Aplikasi\Kitab\Kawal
 		$this->papar->_jadual = $jadual;
 		$this->papar->jenisBorang = 'laporan';
 
-		# Semak data 
-		//$this->semakPembolehubah($this->papar->senarai);
-
 		# Pergi papar kandungan
+		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$this->paparKandungan('laporan_pendaftaran');
 	}
 
@@ -97,10 +91,8 @@ class Pelajar extends \Aplikasi\Kitab\Kawal
 		$this->papar->_jadual = $jadual;
 		$this->papar->jenisBorang = 'papar';
 
-		# Semak data 
-		//$this->semakPembolehubah($this->papar->senarai);
-
 		# Pergi papar kandungan
+		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$this->paparKandungan('profil_pelajar');
 	}
 
@@ -116,10 +108,8 @@ class Pelajar extends \Aplikasi\Kitab\Kawal
 		$this->papar->tajukbesar3 = 'Father Infomation';
 		$this->papar->tajukbesar4 = 'Mother Infomation';
 
-		# Semak data 
-		//$this->semakPembolehubah($this->papar->senarai);
-
 		# Pergi papar kandungan
+		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$this->paparKandungan('papar_profil');
 	}
 #==========================================================================================
