@@ -8,47 +8,51 @@ class Ruangtamu extends \Aplikasi\Kitab\Kawal
 		parent::__construct();
 		//\Aplikasi\Kitab\Kebenaran::kawalMasuk();
 		\Aplikasi\Kitab\Kebenaran::kawalKeluar();
-		$this->_folder = 'ruangtamu';
-
-		/*$this->papar->js = array(
-			'bootstrap-datepicker.js',
-			'bootstrap-datepicker.ms.js');
-		$this->papar->css = array(
-			'bootstrap-datepicker.css'); //*/
+		$this->_folder = huruf('kecil', namaClass($this));
 	}
 
 	public function index()
 	{
 		# Set pemboleubah utama
-		$this->papar->tajuk = 'Ruangtamu';
+		$this->papar->tajuk = namaClass($this);
+		echo '<hr> Nama class : ' . namaClass($this) . '<hr>';
 
-		# pergi papar kandungan
+		# Pergi papar kandungan
+		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
+		//$this->paparKandungan('index');
+	}
+
+	public function paparKandungan($fail)
+	{	# Pergi papar kandungan
 		$jenis = $this->papar->pilihTemplate($template=0);
 		$this->papar->bacaTemplate(
 		//$this->papar->paparTemplate(
-			$this->_folder . '/index',$jenis,0); # $noInclude=0
+			$this->_folder . '/' . $fail, $jenis, 0); # $noInclude=0
 			//'mobile/mobile',$jenis,0); # $noInclude=0
 		//*/
 	}
 
+	public function semakPembolehubah($senarai)
+	{
+		echo '<pre>$senarai:<br>';
+		print_r($senarai);
+		echo '</pre>|';//*/
+	}
+#==========================================================================================
 	public function pelawat()
 	{
 		# Set pemboleubah utama
 		$this->papar->tajuk = 'Ruangtamu';
 		$this->papar->senarai['modul'] = $this->tanya->jadualModul();
 
-		# pergi papar kandungan
-		$jenis = $this->papar->pilihTemplate($template=0);
-		$this->papar->bacaTemplate(
-		//$this->papar->paparTemplate(
-			$this->_folder . '/pelawat',$jenis,0); # $noInclude=0
-			//'mobile/mobile',$jenis,0); # $noInclude=0
-		//*/
+		# Pergi papar kandungan
+		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
+		$this->paparKandungan('pelawat');
 	}
-#==========================================================================================
+#-------------------------------------------------------------------------------------------
 	function semaknama($nama)
 	{
-		# semak data $_POST
+		# Semak data $_POST
 		echo '<pre>$_POST->'; print_r($_POST) . '</pre>| ';
 		echo '<pre>$nama->'; print_r($nama) . '</pre>| ';
 		echo 'Kod:' . \Aplikasi\Kitab\RahsiaHash::rahsia('md5', $nama) . ': ';
@@ -57,10 +61,11 @@ class Ruangtamu extends \Aplikasi\Kitab\Kawal
 
 	function menu()
 	{
-		// Set pemboleubah utama
+		# Set pemboleubah utama
 		$this->papar->pegawai = senarai_kakitangan();
 		$this->papar->tajuk = 'Menu';
-		// pergi papar kandungan
+
+		# Pergi papar kandungan
 		$this->papar->baca('mobile/mobile');
 	}
 
