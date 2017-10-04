@@ -8,17 +8,32 @@ class Dataxml extends \Aplikasi\Kitab\Kawal
 		parent::__construct();
 		//\Aplikasi\Kitab\Kebenaran::kawalMasuk();
 		\Aplikasi\Kitab\Kebenaran::kawalKeluar();
-		$this->_folder = 'akaun';
-
-		/*$this->papar->js = array(
-			'bootstrap-datepicker.js','bootstrap-datepicker.min.js',
-			'bootstrap-datepicker.ms.js','bootstrap-editable.min.js');
-		$this->papar->css = array(
-			'bootstrap-datepicker.css',
-			'bootstrap-editable.css');//*/
+		$this->_folder = huruf('kecil', namaClass($this));
 	}
 
 	public function index() { echo '<br>class Akaun::index() extend Kawal<br>'; }
+
+	public function paparKandungan($folder, $fail, $noInclude)
+	{	
+		//$theme = array(0,1,2,3,4);
+		//$template = $theme[rand(0, count($theme)-1)];
+		# jika tidak mahu include apa2, letak $noInclude=1,
+
+		# Pergi papar kandungan
+		$jenis = $this->papar->pilihTemplate($template=0);
+		$this->papar->bacaTemplate(
+		//$this->papar->paparTemplate(
+			$folder . '/' . $fail, $jenis, $noInclude); # $noInclude=0
+			//'mobile/mobile',$jenis,0); # $noInclude=0
+		//*/
+	}
+
+	public function semakPembolehubah($senarai)
+	{
+		echo '<pre>$senarai:<br>';
+		print_r($senarai);
+		echo '</pre>|';//*/
+	}
 #====================================================================================================
 #---------------------------------------------------------------------------------------------------
 	public function papar($jadual = null, $cariID = null)
@@ -83,12 +98,9 @@ class Dataxml extends \Aplikasi\Kitab\Kawal
 		$this->papar->Tajuk_Muka_Surat = 'Invois';
 		// $this->debug($this->papar->akaun, $this->papar->carian) # semak data
 
-		# pergi papar kandungan
-		$jenis = $this->papar->pilihTemplate($template=0);
-		$this->papar->bacaTemplate
-		//$this->papar->paparTemplate
-			($this->_folder . '/cetakInvois',$jenis,1); # $noInclude=0
-		//*/
+		# Pergi papar kandungan
+		//$this->semakPembolehubah(); # Semak data dulu
+		$this->paparKandungan($this->_folder, 'cetakInvois', $noInclude=1); # $noInclude=0
 	}
 #---------------------------------------------------------------------------------------------------
 	private function debug($paparData = null, $paparCarian = null) 
@@ -127,12 +139,9 @@ class Dataxml extends \Aplikasi\Kitab\Kawal
 		$this->papar->cariID = $cariID;
 		// $this->debug($this->papar->akaun, $this->papar->carian) # semak data
 
-		# pergi papar kandungan
-		$jenis = $this->papar->pilihTemplate($template=0);
-		$this->papar->bacaTemplate
-		//$this->papar->paparTemplate
-			($this->_folder . '/ubah',$jenis,0); # $noInclude=0
-		//*/
+		# Pergi papar kandungan
+		//$this->semakPembolehubah(); # Semak data dulu
+		$this->paparKandungan($this->_folder, 'ubah', $noInclude=0); # $noInclude=0
 	}
 #---------------------------------------------------------------------------------------------------
 	public function ubahCari()
@@ -237,9 +246,9 @@ class Dataxml extends \Aplikasi\Kitab\Kawal
 			$this->papar->carian='[tiada id diisi]';
 		}
 
-		# pergi papar kandungan
-		$this->papar->baca('akaun/buang', 1);
-
+		# Pergi papar kandungan
+		//$this->semakPembolehubah(); # Semak data dulu
+		$this->paparKandungan($this->_folder, 'buang', $noInclude=1); # $noInclude=0
 	}
 #==================================================================================================================
 }
