@@ -14,7 +14,7 @@ class Pelajar extends \Aplikasi\Kitab\Kawal
 	public function index()
 	{
 		# Set pemboleubah utama
-		$this->papar->tajuk = 'Pelajar';
+		$this->papar->tajuk = namaClass($this);
 		echo '<hr> Nama class : ' . namaClass($this) . '<hr>';
 
 		# Pergi papar kandungan
@@ -33,7 +33,7 @@ class Pelajar extends \Aplikasi\Kitab\Kawal
 
 	public function semakPembolehubah($senarai)
 	{
-		echo '<pre>$senarai:<br>'; 
+		echo '<pre>$senarai:<br>';
 		print_r($senarai);
 		echo '</pre>|';//*/
 	}
