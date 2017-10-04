@@ -78,22 +78,12 @@ class Html
 		elseif ( in_array($jenisMedan,array('select')) )
 		{#kod untuk input select option
 			# set pembolehubah
-			$input2 = null;
-			$tatasusunan = explode(',', $jenisData);
-			foreach ($tatasusunan as $key => $value)
-			{
-				$input2 .= '<option value="' . $value . '">';
-				$input2 .= ucfirst($value);
-				$input2 .= '</option>' . $tabline;
-			}
+			$input2 = Html_Input::dropmenuInsert($tabline, $jenisData);
 
-			$paparLabelBawah = ($labelDibawah==null) ? '' : 
-				'<span class="input-group-addon">' 
-				. $labelDibawah . '</span>';
 			# cantumkan dalam input
 			$input = '<div class="input-group input-group-sm">' . $tabline
 				   . '<select ' . $name . ' class="form-control">' . $tabline
-				   . $input2 . '</select>' . $paparLabelBawah
+				   . $input2 . '</select>' . $labelBawah($labelDibawah)
 				   . $tabline2 . '</div>'
 				   . '';
 		}
@@ -124,14 +114,14 @@ class Html
 			$input2 = null;
 			$pecahan = @explode('|', $jenisData);
 			$nama = @explode('-', $namaMedan);
-			
+
 			$input2 .= '<div class="row"><!-- added div.row -->';
-			for($mula = 0; $mula < count($pecahan); $mula++):
-				$tatasusunan = @explode(',', $pecahan[$mula]);
+			for($mula = 0; $mula < count($pecahan); $mula++):		
 				$input2 .= $tabline . '<div class="col-sm-4">'
 						. $tabline4 . '<select name="' . $jadual 
 						. '[' . $nama[$mula] . ']"'
 						. ' class="form-control">';
+				$tatasusunan = @explode(',', $pecahan[$mula]);
 				foreach ($tatasusunan as $key => $value)
 				{
 					$input2 .= $tabline4;
