@@ -17,10 +17,15 @@ class Surat extends \Aplikasi\Kitab\Kawal
 		$this->papar->tajuk = 'Surat';
 
 		# Pergi papar kandungan
+		$this->paparKandungan('index');
+	}
+
+	public function paparKandungan($fail)
+	{	# Pergi papar kandungan
 		$jenis = $this->papar->pilihTemplate($template=0);
 		$this->papar->bacaTemplate(
 		//$this->papar->paparTemplate(
-			$this->_folder . '/index',$jenis,0); # $noInclude=0
+			$this->_folder . '/' . $fail, $jenis, 0); # $noInclude=0
 			//'mobile/mobile',$jenis,0); # $noInclude=0
 		//*/
 	}
@@ -36,12 +41,7 @@ class Surat extends \Aplikasi\Kitab\Kawal
 		echo '</pre>|';//*/
 
 		# Pergi papar kandungan
-		$jenis = $this->papar->pilihTemplate($template=0);
-		$this->papar->bacaTemplate(
-		//$this->papar->paparTemplate(
-			$this->_folder . '/buat_surat',$jenis,0); # $noInclude=0
-			//'mobile/mobile',$jenis,0); # $noInclude=0
-		//*/
+		$this->paparKandungan('buat_surat');
 	}
 
 	function tawaran($pilih)
@@ -64,12 +64,7 @@ class Surat extends \Aplikasi\Kitab\Kawal
 		endif;
 
 		# Pergi papar kandungan
-		$jenis = $this->papar->pilihTemplate($template=0);
-		$this->papar->bacaTemplate(
-		//$this->papar->paparTemplate(
-			$this->_folder . '/' . $fail,$jenis,0); # $noInclude=0
-			//'mobile/mobile',$jenis,0); # $noInclude=0
-		//*/
+		$this->paparKandungan($fail);
 	}
 
 	function terimatawaran()
@@ -85,12 +80,7 @@ class Surat extends \Aplikasi\Kitab\Kawal
 		echo '</pre>|';//*/
 
 		# Pergi papar kandungan
-		$jenis = $this->papar->pilihTemplate($template=0);
-		$this->papar->bacaTemplate(
-		//$this->papar->paparTemplate(
-			$this->_folder . '/senarai_pelajar',$jenis,0); # $noInclude=0
-			//'mobile/mobile',$jenis,0); # $noInclude=0
-		//*/
+		$this->paparKandungan('senarai_pelajar');
 	}
 
 	function tolaktawaran()
@@ -106,15 +96,10 @@ class Surat extends \Aplikasi\Kitab\Kawal
 		echo '</pre>|';//*/
 
 		# Pergi papar kandungan
-		$jenis = $this->papar->pilihTemplate($template=0);
-		$this->papar->bacaTemplate(
-		//$this->papar->paparTemplate(
-			$this->_folder . '/senarai_pelajar',$jenis,0); # $noInclude=0
-			//'mobile/mobile',$jenis,0); # $noInclude=0
-		//*/
+		$this->paparKandungan('senarai_pelajar');
 	}
 #------------------------------------------------------------------------------------------------
-	function profil($pilih)
+	function profil($pilih = 'am')
 	{
 		# Set pemboleubah utama
 		$jadual = 'biodata_pelajar';
@@ -127,19 +112,15 @@ class Surat extends \Aplikasi\Kitab\Kawal
 		print_r($this->papar->data);
 		echo '</pre>|';//*/
 
-		# pilih hantar tawaran melalui apache_child_terminate
+		# pilih hantar tawaran melalui apa
 		if ($pilih == 'surat'): $fail = 'hebahan_surat';
 		elseif ($pilih == 'sms'): $fail = 'hebahan_sms';
 		elseif ($pilih == 'email'): $fail = 'hebahan_email';
+		else: $fail = 'hebahan_am';
 		endif;//*/
 
 		# Pergi papar kandungan
-		$jenis = $this->papar->pilihTemplate($template=0);
-		$this->papar->bacaTemplate(
-		//$this->papar->paparTemplate(
-			$this->_folder . '/' . $fail,$jenis,0); # $noInclude=0
-			//'mobile/mobile',$jenis,0); # $noInclude=0
-		//*/
+		$this->paparKandungan($fail);
 	}
 #------------------------------------------------------------------------------------------------
 #==========================================================================================
