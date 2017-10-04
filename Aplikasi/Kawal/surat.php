@@ -29,18 +29,21 @@ class Surat extends \Aplikasi\Kitab\Kawal
 			//'mobile/mobile',$jenis,0); # $noInclude=0
 		//*/
 	}
+
+	public function semakPembolehubah($senarai)
+	{
+		echo '<pre>$senarai:<br>';
+		print_r($senarai);
+		echo '</pre>|';//*/
+	}
 #==========================================================================================
 	function buatsurat()
 	{
 		# Set pemboleubah utama
 		$this->papar->jenisBorang = 'baru';
 
-		/*# Semak data $this->papar->medanbaru
-		echo '<pre>$this->papar->medanbaru:<br>'; 
-		print_r($this->papar->medanbaru);
-		echo '</pre>|';//*/
-
 		# Pergi papar kandungan
+		//$this->semakPembolehubah($this->papar->medanbaru); # Semak data dulu
 		$this->paparKandungan('buat_surat');
 	}
 
@@ -52,18 +55,14 @@ class Surat extends \Aplikasi\Kitab\Kawal
 		$this->papar->jadual = $jadual;
 		$this->papar->jenisBorang = 'baru';
 
-		/*# Semak data $this->papar->data
-		echo '<pre>$this->papar->data:<br>'; 
-		print_r($this->papar->data);
-		echo '</pre>|';//*/
-
-		# pilih hantar tawaran melalui apache_child_terminate
+		# pilih hantar tawaran melalui apa
 		if ($pilih == 'surat'): $fail = 'surat_tawaran';
 		elseif ($pilih == 'sms'): $fail = 'sms_tawaran';
 		elseif ($pilih == 'email'): $fail = 'email_tawaran';
 		endif;
 
 		# Pergi papar kandungan
+		//$this->semakPembolehubah($this->papar->data); # Semak data dulu
 		$this->paparKandungan($fail);
 	}
 
@@ -74,12 +73,8 @@ class Surat extends \Aplikasi\Kitab\Kawal
 		$this->papar->senarai['Registration Proses'] = $this->tanya->datapelajar($jadual);
 		$this->papar->_jadual = $jadual;
 
-		/*# Semak data $this->papar->senarai['data']
-		echo '<pre>$this->papar->senarai['data']:<br>'; 
-		print_r($this->papar->senarai['data']);
-		echo '</pre>|';//*/
-
 		# Pergi papar kandungan
+		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$this->paparKandungan('senarai_pelajar');
 	}
 
@@ -90,12 +85,8 @@ class Surat extends \Aplikasi\Kitab\Kawal
 		$this->papar->senarai['Registration Proses'] = $this->tanya->datapelajar($jadual);
 		$this->papar->_jadual = $jadual;
 
-		/*# Semak data $this->papar->senarai['data']
-		echo '<pre>$this->papar->senarai['data']:<br>'; 
-		print_r($this->papar->senarai['data']);
-		echo '</pre>|';//*/
-
 		# Pergi papar kandungan
+		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$this->paparKandungan('senarai_pelajar');
 	}
 #------------------------------------------------------------------------------------------------
@@ -107,11 +98,6 @@ class Surat extends \Aplikasi\Kitab\Kawal
 		$this->papar->jadual = $jadual;
 		$this->papar->jenisBorang = 'papar';
 
-		/*# Semak data $this->papar->data
-		echo '<pre>$this->papar->data:<br>'; 
-		print_r($this->papar->data);
-		echo '</pre>|';//*/
-
 		# pilih hantar tawaran melalui apa
 		if ($pilih == 'surat'): $fail = 'hebahan_surat';
 		elseif ($pilih == 'sms'): $fail = 'hebahan_sms';
@@ -120,6 +106,7 @@ class Surat extends \Aplikasi\Kitab\Kawal
 		endif;//*/
 
 		# Pergi papar kandungan
+		//$this->semakPembolehubah($this->papar->data); # Semak data dulu
 		$this->paparKandungan($fail);
 	}
 #------------------------------------------------------------------------------------------------
