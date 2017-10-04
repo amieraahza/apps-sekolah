@@ -20,6 +20,13 @@ function dpt_url_xfilter()
 	return $url;
 }
 
+function namaClass($this)
+{
+	$class = explode('\\',get_class($this));
+
+	return $class[2];
+}
+
 function pecah_url($ulang)
 {
 	$pecah  = explode("/", $_SERVER['REQUEST_URI']);
@@ -255,12 +262,7 @@ function tukarHuruf($asal)
 
 function gambar_latarbelakang($lokasi)
 {
-	// '$lokasi=' . $lokasi;
-    //$tmpt1 = '../private_html/bg/bg'; // utk localhost
-	$tmpt1 = '../../../../private_html/bg/bg'; // utk localhost
-    //$tmpt2 = '../../../../bssu/bg/bg'; // utk website amin007
-	//$tmpt = ($lokasi=='localhost') ? $tmpt1 : $tmpt2;
-    $dh = opendir($tmpt1);
+    $dh = opendir($lokasi);
     $i=1;
     while (($file = readdir($dh)) !== false)
     {
