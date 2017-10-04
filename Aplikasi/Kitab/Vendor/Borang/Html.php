@@ -120,17 +120,9 @@ class Html
 				$input2 .= $tabline . '<div class="col-sm-4">'
 						. $tabline4 . '<select name="' . $jadual 
 						. '[' . $nama[$mula] . ']"'
-						. ' class="form-control">';
-				$tatasusunan = @explode(',', $pecahan[$mula]);
-				foreach ($tatasusunan as $key => $value)
-				{
-					$input2 .= $tabline4;
-					$input2 .= ($key==0) ? '<option>' :
-						'<option value="' . $value . '">';
-					$input2 .= ucfirst($value);
-					$input2 .= '</option>';
-				}
-				$input2	.= $tabline4 . '</select>' . $tabline
+						. ' class="form-control">'
+						. Html_Input::dropmenuInsert($tabline4, $pecahan[$mula])
+						. $tabline4 . '</select>' . $tabline
 						. '</div><!-- class="col-sm-4" -->';
 			endfor;
 			$input2 .= $tabline . '</div><!-- class="row" -->';
