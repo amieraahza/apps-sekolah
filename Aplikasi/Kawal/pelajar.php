@@ -1,5 +1,5 @@
 <?php
-namespace Aplikasi\Kawal; //echo __NAMESPACE__; 
+namespace Aplikasi\Kawal; //echo __NAMESPACE__;
 class Pelajar extends \Aplikasi\Kitab\Kawal
 {
 #==========================================================================================
@@ -15,8 +15,8 @@ class Pelajar extends \Aplikasi\Kitab\Kawal
 	{
 		# Set pemboleubah utama
 		$this->papar->tajuk = 'Pelajar';
-
 		echo '<hr> Nama class : ' . namaClass($this) . '<hr>';
+
 		# Pergi papar kandungan
 		//$this->paparKandungan('index');
 	}
@@ -30,6 +30,13 @@ class Pelajar extends \Aplikasi\Kitab\Kawal
 			//'mobile/mobile',$jenis,0); # $noInclude=0	
 		//*/	
 	}
+
+	public function semakPembolehubah($senarai)
+	{
+		echo '<pre>$senarai:<br>'; 
+		print_r($senarai);
+		echo '</pre>|';//*/		
+	}
 #==========================================================================================
 	function daftarBaru()
 	{
@@ -39,10 +46,8 @@ class Pelajar extends \Aplikasi\Kitab\Kawal
 		$this->papar->jadual = $jadual;
 		$this->papar->jenisBorang = 'baru';
 
-		/*# Semak data $this->papar->medanbaru
-		echo '<pre>$this->papar->medanbaru:<br>'; 
-		print_r($this->papar->medanbaru);
-		echo '</pre>|';//*/
+		# Semak data 
+		//$this->semakPembolehubah($this->papar->medanbaru);
 
 		# Pergi papar kandungan
 		$this->paparKandungan('pendaftaran');
@@ -62,10 +67,8 @@ class Pelajar extends \Aplikasi\Kitab\Kawal
 		$this->papar->_jadual = $jadual;
 		$this->papar->jenisBorang = 'papar';		
 
-		/*# Semak data $this->papar->senarai['data']
-		echo '<pre>$this->papar->senarai['data']:<br>'; 
-		print_r($this->papar->senarai['data']);
-		echo '</pre>|';//*/
+		# Semak data 
+		//$this->semakPembolehubah($this->papar->senarai);
 
 		# Pergi papar kandungan
 		$this->paparKandungan('senarai_pelajar');
@@ -79,10 +82,8 @@ class Pelajar extends \Aplikasi\Kitab\Kawal
 		$this->papar->_jadual = $jadual;
 		$this->papar->jenisBorang = 'laporan';
 
-		/*# Semak data $this->papar->senarai['data']
-		echo '<pre>$this->papar->senarai['data']:<br>'; 
-		print_r($this->papar->senarai['data']);
-		echo '</pre>|';//*/
+		# Semak data 
+		//$this->semakPembolehubah($this->papar->senarai);
 
 		# Pergi papar kandungan
 		$this->paparKandungan('laporan_pendaftaran');
@@ -94,16 +95,14 @@ class Pelajar extends \Aplikasi\Kitab\Kawal
 		$jadual = 'biodata_pelajar';
 		$this->papar->senarai = $this->tanya->profilSeorang($jadual, $id);
 		$this->papar->_jadual = $jadual;
-		$this->papar->jenisBorang = 'papar';		
+		$this->papar->jenisBorang = 'papar';
 		$this->papar->tajukbesar1 = 'Student Infomation';
 		$this->papar->tajukbesar2 = 'Profil';
 		$this->papar->tajukbesar3 = 'Father Infomation';
 		$this->papar->tajukbesar4 = 'Mother Infomation';
 
-		/*# Semak data $this->papar->senarai
-		echo '<pre>$this->papar->senarai:<br>'; 
-		print_r($this->papar->senarai);
-		echo '</pre>|';//*/
+		# Semak data 
+		//$this->semakPembolehubah($this->papar->senarai);
 
 		# Pergi papar kandungan
 		$this->paparKandungan('papar_profil');
