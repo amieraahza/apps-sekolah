@@ -89,6 +89,21 @@ class Pelajar extends \Aplikasi\Kitab\Kawal
 		$this->paparKandungan('laporan_pendaftaran');
 	}
 
+	public function paparSemua()
+	{
+		# Set pemboleubah utama
+		$jadual = 'biodata_pelajar';
+		$this->papar->senarai['Senarai Semua Pelajar'] = $this->tanya->profilSemua($jadual);
+		$this->papar->_jadual = $jadual;
+		$this->papar->jenisBorang = 'papar';
+
+		# Semak data 
+		//$this->semakPembolehubah($this->papar->senarai);
+
+		# Pergi papar kandungan
+		$this->paparKandungan('profil_pelajar');
+	}
+
 	public function papar($profil,$id)
 	{
 		# Set pemboleubah utama
