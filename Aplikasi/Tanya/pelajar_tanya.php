@@ -617,7 +617,7 @@ class Pelajar_Tanya extends \Aplikasi\Kitab\Tanya
 		return $medan; # pulangkan pemboleubah
 	}
 #------------------------------------------------------------------------------------------------------------------
-	public function profil($jadual)
+	public function profilSemua($jadual)
 	{
 		# ada nilai
 		$medan = array(
