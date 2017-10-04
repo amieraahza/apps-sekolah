@@ -8,7 +8,7 @@ class Pelajar extends \Aplikasi\Kitab\Kawal
 		parent::__construct();
 		//\Aplikasi\Kitab\Kebenaran::kawalMasuk();
 		\Aplikasi\Kitab\Kebenaran::kawalKeluar();
-		$this->_folder = 'pelajar';
+		$this->_folder = huruf('kecil', namaClass($this));
 	}
 
 	public function index()
@@ -16,13 +16,19 @@ class Pelajar extends \Aplikasi\Kitab\Kawal
 		# Set pemboleubah utama
 		$this->papar->tajuk = 'Pelajar';
 
+		echo '<hr> Nama class : ' . namaClass($this) . '<hr>';
 		# Pergi papar kandungan
+		//$this->paparKandungan('index');
+	}
+
+	public function paparKandungan($fail)
+	{	# Pergi papar kandungan
 		$jenis = $this->papar->pilihTemplate($template=0);
 		$this->papar->bacaTemplate(
 		//$this->papar->paparTemplate(
-			$this->_folder . '/index',$jenis,0); # $noInclude=0
-			//'mobile/mobile',$jenis,0); # $noInclude=0
-		//*/
+			$this->_folder . '/' . $fail,$jenis,0); # $noInclude=0
+			//'mobile/mobile',$jenis,0); # $noInclude=0	
+		//*/	
 	}
 #==========================================================================================
 	function daftarBaru()
@@ -39,12 +45,7 @@ class Pelajar extends \Aplikasi\Kitab\Kawal
 		echo '</pre>|';//*/
 
 		# Pergi papar kandungan
-		$jenis = $this->papar->pilihTemplate($template=0);
-		$this->papar->bacaTemplate(
-		//$this->papar->paparTemplate(
-			$this->_folder . '/pendaftaran',$jenis,0); # $noInclude=0
-			//'mobile/mobile',$jenis,0); # $noInclude=0
-		//*/
+		$this->paparKandungan('pendaftaran');
 	}
 
 	function semakDaftarBaru()
@@ -67,12 +68,7 @@ class Pelajar extends \Aplikasi\Kitab\Kawal
 		echo '</pre>|';//*/
 
 		# Pergi papar kandungan
-		$jenis = $this->papar->pilihTemplate($template=0);
-		$this->papar->bacaTemplate(
-		//$this->papar->paparTemplate(
-			$this->_folder . '/senarai_pelajar',$jenis,0); # $noInclude=0
-			//'mobile/mobile',$jenis,0); # $noInclude=0
-		//*/
+		$this->paparKandungan('senarai_pelajar');
 	}
 
 	function laporanDaftar()
@@ -89,12 +85,7 @@ class Pelajar extends \Aplikasi\Kitab\Kawal
 		echo '</pre>|';//*/
 
 		# Pergi papar kandungan
-		$jenis = $this->papar->pilihTemplate($template=0);
-		$this->papar->bacaTemplate(
-		//$this->papar->paparTemplate(
-			$this->_folder . '/laporan_pendaftaran',$jenis,0); # $noInclude=0
-			//'mobile/mobile',$jenis,0); # $noInclude=0
-		//*/
+		$this->paparKandungan('laporan_pendaftaran');
 	}
 
 	public function papar($profil,$id)
@@ -115,12 +106,7 @@ class Pelajar extends \Aplikasi\Kitab\Kawal
 		echo '</pre>|';//*/
 
 		# Pergi papar kandungan
-		$jenis = $this->papar->pilihTemplate($template=0);
-		$this->papar->bacaTemplate(
-		//$this->papar->paparTemplate(
-			$this->_folder . '/papar_profil',$jenis,0); # $noInclude=0
-			//'mobile/mobile',$jenis,0); # $noInclude=0
-		//*/
+		$this->paparKandungan('papar_profil');
 	}
 #==========================================================================================
 }
