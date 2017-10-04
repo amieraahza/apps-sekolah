@@ -411,14 +411,34 @@ class Html
 				   . $tabline2 . '</div>'
 				   . '';
 		}
+		elseif ( in_array($jenisMedan,array('textbox2textbox')) )
+		{#kod untuk textbox dan tik
+			$input = '';
+			$nama = @explode('-', $namaMedan);
+			$label = @explode('|', $labelDibawah);
+			$i2 = '';
+			for($m = 0; $m < count($nama); $m++):
+				$i2 .= '<span class="input-group-addon">' . $label[$m] . '</span>' . $tabline;
+				$i2 .= '<input type="text" ' . $nama[$m] . ' class="form-control">' . $tabline;
+			endfor;
+
+			$input	.= '<div class="input-group input-group">' . $tabline
+					. $i2 . $tabline2 . '</div>' 
+					. '';
+		}
 		elseif ( in_array($jenisMedan,array('password','kataLaluan')) )
 		{#kod untuk input password
-			$input = ''//'<div class="input-group input-group-sm">' . $tabline
-				   //. '<span class="input-group-addon"></span>' . $tabline
-				   . '<input type="password" ' . $name
+			$input = '<input type="password" ' . $name
 				   . $tabline . ' placeholder="Tukar kata laluan"'
 				   . ' class="form-control">'
-				   //. $tabline2 . '</div>'
+				   . '';
+		}
+		elseif(in_array($jenisMedan,array('textarea')))
+		{#kod utk textarea
+			$input = '<div class="input-group input-group">' . $tabline
+				   . '<textarea ' . $name . ' rows="5" cols="20"' . $tabline
+				   . ' class="form-control"></textarea>' . $tabline 
+				   . '<span class="input-group-addon">' . $labelDibawah . '</span></div>'
 				   . '';
 		}
 		elseif ( in_array($jenisMedan,array('select')) )
@@ -440,29 +460,51 @@ class Html
 				. $labelDibawah . '</span>';
 			# cantumkan dalam input
 			$input = '<div class="input-group input-group-sm">' . $tabline
-				   //. '<span class="input-group-addon">' . $data . '</span>' . $tabline
 				   . '<select ' . $name . ' class="form-control">' . $tabline
-				   . $input2 . '</select>'
-				   . $paparLabelBawah
+				   . $input2 . '</select>' . $paparLabelBawah
 				   . $tabline2 . '</div>'
 				   . '';
+		}
+		elseif ( in_array($jenisMedan,array('select2select')) )
+		{#kod untuk input select option
+			# set pembolehubah
+			$i2 = null;
+			$nama = @explode('-', $namaMedan);
+			$label = @explode('|', $labelDibawah);
+
+			for($mula = 0; $mula < count($nama); $mula++):
+				$i2 .= $tabline . '<span class="input-group-addon">' 
+					. $label[$mula] . '</span>' . $tabline
+					. $tabline4 . '<select name="' . $jadual 
+					. '[' . $nama[$mula] . ']"'
+					. ' class="form-control">'
+					. Html_Input::dropmenuInsert($tabline4, $jenisData)
+					. '</select>';
+			endfor;
+
+			# cantumkan dalam input
+			$input = '<div class="input-group input-group">' . $tabline
+			       . $i2 . $tabline2 . '</div>' . '';
 		}
 		elseif ( in_array($jenisMedan,array('manyselect')) )
 		{#kod untuk input select option
 			# set pembolehubah
 			$input2 = null;
 			$pecahan = @explode('|', $jenisData);
+			$nama = @explode('-', $namaMedan);
 			
 			$input2 .= '<div class="row"><!-- added div.row -->';
 			for($mula = 0; $mula < count($pecahan); $mula++):
 				$tatasusunan = @explode(',', $pecahan[$mula]);
 				$input2 .= $tabline . '<div class="col-sm-4">'
-						. $tabline4 . '<select ' . $name 
+						. $tabline4 . '<select name="' . $jadual 
+						. '[' . $nama[$mula] . ']"'
 						. ' class="form-control">';
 				foreach ($tatasusunan as $key => $value)
 				{
 					$input2 .= $tabline4;
-					$input2 .= '<option value="' . $value . '">';
+					$input2 .= ($key==0) ? '<option>' :
+						'<option value="' . $value . '">';
 					$input2 .= ucfirst($value);
 					$input2 .= '</option>';
 				}
