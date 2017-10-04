@@ -9,7 +9,7 @@ $icon['Barcode'] = '<span class="glyphicon glyphicon-barcode"></span>';
 $icon['Filter'] = '<span class="glyphicon glyphicon-filter"></span>';
 $icon['Stats'] = '<span class="glyphicon glyphicon-stats"></span>';
 ?>
-<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
+<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
 <ul class="<?php echo $classUL ?>">
 <li class="dropdown"><a <?php echo $nav ?> href="#">
 	<i class="fa fa-money fa-2x" aria-hidden="true"></i>
@@ -27,10 +27,13 @@ $icon['Stats'] = '<span class="glyphicon glyphicon-stats"></span>';
 	<li><a href="<?php echo URL ?>pelajar/daftarBaru">
 		<i class="fa fa-user-plus fa-2x" aria-hidden="true"></i>
 		Baru</a></li>
-	<li><a href="<?php echo URL ?>pelajar/profil">
+	<li><a href="<?php echo URL ?>pelajar/paparSemua">
 		<i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>
 		Profil</a></li>
-	<li><a></a></li>
+	<li><a href="<?php echo URL ?>pelajar/ibubapa">
+		<i class="fa fa-female fa-2x" aria-hidden="true"></i>
+		<i class="fa fa-male fa-2x" aria-hidden="true"></i>
+		Ibubapa</a></li>
 	</ul>
 </li>
 <li class="dropdown"><a <?php echo $nav ?> href="#">
@@ -40,4 +43,5 @@ $icon['Stats'] = '<span class="glyphicon glyphicon-stats"></span>';
 	<i class="fa fa-exclamation-triangle fa-2x" aria-hidden="true"></i>
 	Displin</a></li>
 </ul>
-<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
+<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
+<?php 
