@@ -8,16 +8,17 @@ class Surat extends \Aplikasi\Kitab\Kawal
 		parent::__construct();
 		//\Aplikasi\Kitab\Kebenaran::kawalMasuk();
 		\Aplikasi\Kitab\Kebenaran::kawalKeluar();
-		$this->_folder = 'surat';
+		$this->_folder = huruf('kecil', namaClass($this));
 	}
 
 	public function index()
 	{
 		# Set pemboleubah utama
-		$this->papar->tajuk = 'Surat';
+		$this->papar->tajuk = namaClass($this);
+		echo '<hr> Nama class : ' . namaClass($this) . '<hr>';
 
 		# Pergi papar kandungan
-		$this->paparKandungan('index');
+		//$this->paparKandungan('index');
 	}
 
 	public function paparKandungan($fail)
