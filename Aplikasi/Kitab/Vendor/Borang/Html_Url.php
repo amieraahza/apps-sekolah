@@ -16,8 +16,10 @@ class Html_Url
 		elseif ($key=='terimaProsesan'):
 			$this->gaya_url_5($data);
 		elseif(in_array($key,array('Mesej'))):
-			?><td><?php echo nl2br($data) ?></td><?php
-		else:?><td><?php echo $data ?></td><?php
+			?><td><?php echo nl2br($data) ?></td>
+			<?php
+		else:?><td><?php echo $data ?></td>
+			<?php
 		endif;
 	}
 #------------------------------------------------------------------------------------------
@@ -35,6 +37,7 @@ class Html_Url
 		?><td><?php echo $p0 . $p1 ?></td><?php
 		?><td><?php echo $data ?></td><?php		
 	}
+#------------------------------------------------------------------------------------------
 	public function gaya_url_2($data) 
 	{
 		$this->gaya_url_2($data)
@@ -45,6 +48,7 @@ class Html_Url
 
 		?><td><?php echo $pautan ?></td><?php
 	}
+#------------------------------------------------------------------------------------------
 	public function gaya_url_3($data) 
 	{
 		$k1 = URL . "operasi/batch/$data";
@@ -59,6 +63,7 @@ class Html_Url
 			?></td><?php
 		endif;
 	}
+#------------------------------------------------------------------------------------------
 	public function gaya_url_4($data)
 	{
 		$k1 = URL . "batch/proses/$data";
@@ -73,6 +78,7 @@ class Html_Url
 			?></td><?php
 		endif;	
 	}
+#------------------------------------------------------------------------------------------
 	public function gaya_url_5($data)
 	{
 		$k1 = URL . "batch/terima/$data";
