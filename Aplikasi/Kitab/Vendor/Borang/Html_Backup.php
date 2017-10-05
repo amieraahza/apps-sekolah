@@ -5,7 +5,7 @@ class Html_Backup
 #==========================================================================================
 	public function tambah1Input($paparSahaja,$jadual,$kira,$medan,$data)
 	{	# istihar pembolehubah 
-		$name = 'name="' . $jadual  . '[' . $kira . ']' . '[' . $medan . ']"';
+		$name = 'name="' . $jadual  . '[' . $kira . '][' . $medan . ']"';
 		$tabline = "\n\t\t";
 		$tabline2 = "\n\t\t\t\t";
 
