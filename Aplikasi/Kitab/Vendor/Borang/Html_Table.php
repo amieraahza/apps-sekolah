@@ -7,29 +7,21 @@ class Html_Table
 	{# mula untuk kod php+html 
 		//echo 'mahu pilih apa?|';
 		if ($pilih == '1'):
-			//echo 'pilih = ' . $pilih . '|';
-			//Html_Table::table_gaya_1($classTable, $myTable, $row);
+			Html_Table::table_gaya_1($classTable, $myTable, $row);
 		elseif ($pilih == '1_header'):
-			echo 'pilih = ' . $pilih . '|';
 			Html_Table::table_gaya_1_header($classTable, $myTable, $row, $header);
 		elseif ($pilih == '1_link'): 
-			//echo 'pilih = ' . $pilih . '|';
 			Html_Table::table_gaya_1_link($classTable, $myTable, $row);
 		elseif ($pilih == '2'): 
-			//echo 'pilih = ' . $pilih . '|';
 			Html_Table::table_gaya_2($classTable, $myTable, $row);
 		elseif ($pilih == '3'): 
-			//echo 'pilih = ' . $pilih . '|';
 			Html_Table::table_gaya_3($classTable, $myTable, $row);
 		elseif ($pilih == '4'):  
-			//echo 'pilih = ' . $pilih . '|';
 			Html_Table::table_gaya_4($classTable, $myTable, $row);
 		elseif ($pilih == '5'): 
-			//echo 'pilih = ' . $pilih . '|';
 			Html_Table::table_gaya_5($classTable, $myTable, $row);
 		endif;
 	}
-	# tamat untuk kod php+html 
 #------------------------------------------------------------------------------------------
 	public static function table_gaya_1($classTable = 'excel', $myTable, $row)
 	{//////////////////////////////////////////////////////////////////////////////////////////////////////////
