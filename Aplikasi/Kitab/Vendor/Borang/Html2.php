@@ -21,7 +21,7 @@ class Html2
 			  . ' id="' . $key . '"';
 		$medanApa = $jadual . '[' . $key . ']';
 		$input = '<div class="input-prepend">' . $jadual
-			   //. '<span class="add-on">' . $medanApa . '</span>' 
+			   //. '<span class="add-on"></span>' 
 			   . '<input type="text" ' . $name . ' value="' 
 			   . $data . '" class="input-medium"></div>';
 
