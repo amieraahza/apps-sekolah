@@ -52,7 +52,8 @@ class Html_Table
 	{//////////////////////////////////////////////////////////////////////////////////////////////////////////
 			?><!-- Jadual <?php echo $myTable ?> -->
 			<table border="1" class="<?php echo $classTable ?>">
-			<?php echo $header; $printed_headers = false; # mula bina jadual
+			<?php echo $header; # bina tajuk khas atas medan sedia ada
+			$printed_headers = false; # mula bina jadual
 			#-----------------------------------------------------------------
 			for ($kira=0; $kira < count($row); $kira++)
 			{	# cetak tajuk hanya sekali sahaja: 
@@ -66,7 +67,7 @@ class Html_Table
 			?><tbody><tr>
 			<td><?php echo $kira+1 ?></td>	
 			<?php foreach ( $row[$kira] as $key=>$data ) : 
-			?><td><?php echo $data; //Html_Url::pilihURL($key, $data, $myTable) ?></td>
+			?><td><?php Html_Url::pilihURL($key, $data, $myTable) ?></td>
 			<?php endforeach; ?></tr></tbody>
 			<?php
 			}#-----------------------------------------------------------------
