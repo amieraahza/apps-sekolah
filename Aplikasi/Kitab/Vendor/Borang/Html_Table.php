@@ -30,7 +30,7 @@ class Html_Table
 			<?php $printed_headers = false; # mula bina jadual
 			#-----------------------------------------------------------------
 			for ($kira=0; $kira < count($row); $kira++)
-			{	# print the headers once: 
+			{	# cetak tajuk hanya sekali sahaja: 
 				if ( !$printed_headers ) : ?><thead><tr>
 			<th>#</th><?php foreach ( array_keys($row[$kira]) as $tajuk ) :
 			?><th><?php echo $tajuk ?></th>
@@ -55,7 +55,7 @@ class Html_Table
 			<?php echo $header; $printed_headers = false; # mula bina jadual
 			#-----------------------------------------------------------------
 			for ($kira=0; $kira < count($row); $kira++)
-			{	# print the headers once: 
+			{	# cetak tajuk hanya sekali sahaja: 
 				if ( !$printed_headers ) : ?><thead><tr>
 			<th>#</th><?php foreach ( array_keys($row[$kira]) as $tajuk ) :
 			?><th><?php echo $tajuk ?></th>
@@ -80,7 +80,7 @@ class Html_Table
 			<?php $printed_headers = false; # mula bina jadual
 			#-----------------------------------------------------------------
 			for ($kira=0; $kira < count($row); $kira++)
-			{	# print the headers once: 
+			{	# cetak tajuk hanya sekali sahaja: 
 				if ( !$printed_headers ) : ?><thead><tr>
 			<th>#</th><?php foreach ( array_keys($row[$kira]) as $tajuk ) :
 			?><th><?php echo $tajuk ?></th>
@@ -105,7 +105,7 @@ class Html_Table
 			$printed_headers = false; # mula bina jadual
 			#-----------------------------------------------------------------
 			for ($kira=0; $kira < count($row); $kira++)
-			{	# cetak tajuk hanya sekali sahaja :
+			{	# cetak tajuk hanya sekali sahaja:
 				if ( !$printed_headers ) : ?>
 			<thead><tr>
 			<th>#</th><?php
@@ -153,7 +153,7 @@ class Html_Table
 			<?php $printed_headers = false; # mula bina jadual
 			#-----------------------------------------------------------------
 			for ($kira=0; $kira < count($row); $kira++)
-			{	# cetak tajuk hanya sekali sahaja :
+			{	# cetak tajuk hanya sekali sahaja:
 				if ( !$printed_headers ) : ?><thead><tr>
 			<th>#</th><?php foreach ( array_keys($row[$kira]) as $tajuk ) :
 			?><th><?php echo $tajuk ?></th><?php endforeach; 
@@ -181,7 +181,7 @@ class Html_Table
 			$printed_headers = false; # mula bina jadual
 			#-----------------------------------------------------------------
 			for ($kira=0; $kira < $bil_baris; $kira++)
-			{	# print the headers once:
+			{	# cetak tajuk hanya sekali sahaja:
 				if ( !$printed_headers ) 
 				{##=================================================
 				$output .= "\r\t<thead><tr>\r\t<th>#</th>";
