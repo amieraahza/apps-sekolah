@@ -37,7 +37,7 @@ class Html_Table
 			<?php endforeach; ?></tr></thead>
 			<?php	$printed_headers = true; 
 				endif;
-			#- print the data row --------------------------------------------
+			#- cetak hasil $data --------------------------------------------
 			?><tbody><tr>
 			<td><?php echo $kira+1 ?></td>	
 			<?php foreach ( $row[$kira] as $key=>$data ) : 
@@ -62,7 +62,7 @@ class Html_Table
 			<?php endforeach; ?></tr></thead>
 			<?php	$printed_headers = true; 
 				endif;
-			#- print the data row --------------------------------------------
+			#- cetak hasil $data --------------------------------------------
 			?><tbody><tr>
 			<td><?php echo $kira+1 ?></td>	
 			<?php foreach ( $row[$kira] as $key=>$data ) : 
@@ -87,7 +87,7 @@ class Html_Table
 			<?php endforeach; ?></tr></thead>
 			<?php	$printed_headers = true; 
 				endif;
-			#- print the data row --------------------------------------------
+			#- cetak hasil $data --------------------------------------------
 			?><tbody><tr>
 			<td><?php echo $kira+1 ?></td>	
 			<?php foreach ( $row[$kira] as $key=>$data ) : 
@@ -192,7 +192,7 @@ class Html_Table
 				##==================================================
 					$printed_headers = true; 
 				} 
-			#--- print the data row ------------------------------------------
+			#--- cetak hasil $data ------------------------------------------
 				$output .= "\r\t<tbody><tr>\r\t<td>" . ($kira+1) . '</td>';
 				foreach ( $row[$kira] as $key=>$data ) :
 					$output .= "\r\t" . '<td>' . $data . '</td>';
