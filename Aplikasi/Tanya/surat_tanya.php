@@ -337,5 +337,116 @@ class Surat_Tanya extends \Aplikasi\Kitab\Tanya
 		return $medan; # pulangkan pemboleubah
 	}
 #------------------------------------------------------------------------------------------------------------------
+	public function paparWaris($jadual)
+	{
+		# ada nilai
+		$medan = array (
+			'0' => array (
+				'Father' => 'James Bond 0',
+				'IC/Pasport' => '12365478963',
+				'H/P' => '0130123456',
+				'Email' => 'bapa@duduk.mana',
+				'Mother' => 'Marry Me 0',
+				'H/P&nbsp;' => '014123456',
+				'Email&nbsp;' => 'ibu@@duduk.mana',
+				'Handphone' => '0123457890',
+				'Email&nbsp;&nbsp;' => 'utama0@duduk.mana',
+			),
+			'1' => array (
+				'Father' => 'James Bond 0',
+				'IC/Pasport' => '12365478963',
+				'H/P' => '0130123456',
+				'Email' => 'bapa@duduk.mana',
+				'Mother' => 'Marry Me 0',
+				'H/P&nbsp;' => '014123456',
+				'Email&nbsp;' => 'ibu@@duduk.mana',
+				'Handphone' => '0123457890',
+				'Email&nbsp;&nbsp;' => 'utama0@duduk.mana',
+			),
+			'2' => array (
+				'Father' => 'Hunt Mission Imposibil 0',
+				'IC/Pasport' => '12365478963',
+				'H/P' => '0130123456',
+				'Email' => 'bapa@duduk.mana',
+				'Mother' => 'Marry Me 0',
+				'H/P&nbsp;' => '014123456',
+				'Email&nbsp;' => 'ibu@@duduk.mana',
+				'Handphone' => '0123457890',
+				'Email&nbsp;&nbsp;' => 'utama0@duduk.mana',
+			),
+			'3' => array (
+				'Father' => 'Macgyber 0',
+				'IC/Pasport' => '12365478963',
+				'H/P' => '0130123456',
+				'Email' => 'bapa@duduk.mana',
+				'Mother' => 'Marry Me 0',
+				'H/P&nbsp;' => '014123456',
+				'Email&nbsp;' => 'ibu@@duduk.mana',
+				'Handphone' => '0123457890',
+				'Email&nbsp;&nbsp;' => 'utama0@duduk.mana',
+			),
+			'4' => array (
+				'Father' => 'Tom Cros 0',
+				'IC/Pasport' => '12365478963',
+				'H/P' => '0130123456',
+				'Email' => 'bapa@duduk.mana',
+				'Mother' => 'Marry Me 0',
+				'H/P&nbsp;' => '014123456',
+				'Email&nbsp;' => 'ibu@@duduk.mana',
+				'Handphone' => '0123457890',
+				'Email&nbsp;&nbsp;' => 'utama0@duduk.mana',
+			),
+			'5' => array (
+				'Father' => 'Mr Bean 0',
+				'IC/Pasport' => '12365478963',
+				'H/P' => '0130123456',
+				'Email' => 'bapa@duduk.mana',
+				'Mother' => 'Marry Me 0',
+				'H/P&nbsp;' => '014123456',
+				'Email&nbsp;' => 'ibu@@duduk.mana',
+				'Handphone' => '0123457890',
+				'Email&nbsp;&nbsp;' => 'utama0@duduk.mana',
+			),
+			'6' => array (
+				'Father' => 'James Bond 0',
+				'IC/Pasport' => '12365478963',
+				'H/P' => '0130123456',
+				'Email' => 'bapa@duduk.mana',
+				'Mother' => 'Marry Me 0',
+				'H/P&nbsp;' => '014123456',
+				'Email&nbsp;' => 'ibu@@duduk.mana',
+				'Handphone' => '0123457890',
+				'Email&nbsp;&nbsp;' => 'utama0@duduk.mana',
+			),
+		);
+
+		$medan2 = array(); # tiada nilai
+
+		return $medan; # pulangkan pemboleubah
+	}
+#------------------------------------------------------------------------------------------------------------------
+	public function paparWarisHeader($jadual)
+	{
+		# ada nilai
+		$medan = array(
+			0 => array (
+				'colspan' => 4,
+				'label' => 'Parent/Father Infomation',
+				),
+			1 => array (
+				'colspan' => 3,
+				'label' => 'Mother Infomation',
+				),
+			2 => array (
+				'colspan' => 3,
+				'label' => 'Main Contact',
+				),
+			); 
+
+		$medan2 = array(); # tiada nilai
+
+		return $medan; # pulangkan pemboleubah
+	}
+#------------------------------------------------------------------------------------------------------------------
 #==========================================================================================
 }
