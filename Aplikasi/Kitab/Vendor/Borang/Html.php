@@ -25,7 +25,7 @@ class Html
 		{#kod utk input text 
 			$data = null;
 			$input = '<div class="input-group input-group">' . $tabline
-				   //. '<span class="input-group-addon">' . $data . '</span>' . $tabline
+				   //. '<span class="input-group-addon"></span>' . $tabline
 				   . '<input type="text" ' . $name . ' class="form-control">' . $tabline
 				   . '<span class="input-group-addon">' . $labelDibawah . '</span>'
 				   . $tabline2 . '</div>'
@@ -36,7 +36,7 @@ class Html
 			$data = null;
 			$pecah = explode('|', $jenisData);
 			$input = '<div class="input-group input-group">' . $tabline
-				   //. '<span class="input-group-addon">' . $data . '</span>' . $tabline
+				   //. '<span class="input-group-addon"></span>' . $tabline
 				   . '<input type="text" ' . $inputText . ' value="' . $pecah[0] . '"'
 				   . ' class="form-control">' . $tabline
 				   . '<span class="input-group-addon">'
@@ -330,11 +330,6 @@ class Html
 #==========================================================================================
 	function paparURL($key, $data, $myTable = null, $cariA= null, $cariB = null)
 	{
-		# kod warna butang
-		$warnaPrimary = $this->butang('primary'); # birutua
-		$warnaDanger = $this->butang('danger'); # merah
-		$warnaSuccess = $this->butang('success'); # hijau
-
 		if ($key=='no')
 		{# primary key
 				$k0 = URL . 'pelajar/papar/profil/' . $data;
@@ -357,46 +352,6 @@ class Html
 
 			?><td><?php echo $pautan ?></td><?php
 		}
-		elseif ($key=='pegawaiborang')
-		{
-			$k1 = URL . "operasi/batch/$data";
-			$k2 = URL . "laporan/cetakNonA1/$data/1000";
-			$k3 = URL . "laporan/cetakA1/$data/1000";
-			if ($data == null):
-				?><td>&nbsp;</td><?php
-			else:?><td><?php
-				$this->pautanTD(null,$k1,$warnaPrimary,$data);
-				$this->pautanTD('_blank',$k2,$warnaDanger,'Batch Non A1');
-				$this->pautanTD('_blank',$k3,$warnaSuccess,'Batch A1');
-				?></td><?php
-			endif;
-		}
-		elseif ($key=='hantar_prosesan')
-		{
-			$k1 = URL . "batch/proses/$data";
-			$k2 = URL . "laporan/cetakNonA1/$data/1000";
-			$k3 = URL . "laporan/cetakA1/$data/1000";
-			if ($data == null):
-				?><td>&nbsp;</td><?php
-			else:?><td><?php
-				$this->pautanTD(null,$k1,$warnaPrimary,$data);
-				$this->pautanTD('_blank',$k2,$warnaDanger,'Batch Non A1');
-				$this->pautanTD('_blank',$k3,$warnaSuccess,'Batch A1');
-				?></td><?php
-			endif;
-		}
-		elseif ($key=='terimaProsesan')
-		{
-			$k1 = URL . "batch/terima/$data";
-			$k2 = URL . "laporan/cetakTerimaProses/$data";
-			if ($data == null):
-				?><td>&nbsp;</td><?php
-			else:?><td><?php
-				$this->pautanTD(null,$k1,$warnaPrimary,$data);
-				$this->pautanTD('_blank',$k2,$warnaDanger,'cetak');
-				?></td><?php
-			endif;
-		}
 		elseif(in_array($key,array('Mesej')))
 		{
 			?><td><?php echo nl2br($data) ?></td><?php
@@ -404,8 +359,7 @@ class Html
 		else
 		{
 			?><td><?php echo $data ?></td><?php
-		}
-
+		}//*/
 	}
 #==========================================================================================
 	public function paparLink($jenis = '0')
