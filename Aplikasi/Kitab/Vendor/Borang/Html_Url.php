@@ -86,9 +86,6 @@ class Html_Url
 		endif;
 	}
 #------------------------------------------------------------------------------------------
-#------------------------------------------------------------------------------------------
-#------------------------------------------------------------------------------------------
-#------------------------------------------------------------------------------------------
 	public function butang($warna = 'info',$saiz = 'kecil')
 	{ 
 		$btnW['primary'] = 'btn btn-primary'; # birutua
@@ -96,7 +93,7 @@ class Html_Url
 		$btnW['danger'] = 'btn btn-danger'; # merah
 		$btnW['success'] = 'btn btn-success'; #hijau
 		$btnS['kecil'] = ' btn-mini'; # - utama
-		
+
 		$btn = $btnW[$warna] . $btnS[$saiz];
 		return $btn;
 	}
