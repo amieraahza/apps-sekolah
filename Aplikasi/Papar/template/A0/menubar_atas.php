@@ -30,7 +30,7 @@ $icon['Stats'] = '<span class="glyphicon glyphicon-stats"></span>';
 	<li><a href="<?php echo URL ?>pelajar/paparSemua">
 		<i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>
 		Profil</a></li>
-	<li><a href="<?php echo URL ?>pelajar/ibubapa">
+	<li><a href="<?php echo URL ?>surat/hubungiwaris">
 		<i class="fa fa-female fa-2x" aria-hidden="true"></i>
 		<i class="fa fa-male fa-2x" aria-hidden="true"></i>
 		Ibubapa</a></li>
