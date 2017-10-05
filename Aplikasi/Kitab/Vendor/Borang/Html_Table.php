@@ -67,8 +67,8 @@ class Html_Table
 			?><tbody><tr>
 			<td><?php echo $kira+1 ?></td>	
 			<?php foreach ( $row[$kira] as $key=>$data ) : 
-			?><td><?php Html_Url::pilihURL($key, $data, $myTable) ?></td>
-			<?php endforeach; ?></tr></tbody>
+				Html_Url::pilihURL($key, $data, $myTable); 
+				endforeach; ?></tr></tbody>
 			<?php
 			}#-----------------------------------------------------------------
 			?></table><?php echo "\r" ?><!-- Jadual <?php echo $myTable ?> --><?php
@@ -92,8 +92,8 @@ class Html_Table
 			?><tbody><tr>
 			<td><?php echo $kira+1 ?></td>	
 			<?php foreach ( $row[$kira] as $key=>$data ) : 
-			?><td><?php Html_Url::pilihURL($key, $data, $myTable) ?></td>
-			<?php endforeach; ?></tr></tbody>
+				Html_Url::pilihURL($key, $data, $myTable); 
+				endforeach; ?></tr></tbody>
 			<?php
 			}#-----------------------------------------------------------------
 			?></table><?php echo "\r" ?><!-- Jadual <?php echo $myTable ?> --><?php
