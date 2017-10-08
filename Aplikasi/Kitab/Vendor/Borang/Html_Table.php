@@ -3,7 +3,8 @@ namespace Aplikasi\Kitab; //echo __NAMESPACE__;
 class Html_Table
 {
 #==========================================================================================
-	public static function papar_jadual($row, $myTable, $pilih, $classTable, $header = null)
+	public static function papar_jadual($row, $myTable, $pilih, $classTable, 
+	$header = null, $id = null)
 	{# mula untuk kod php+html 
 		if ($pilih == '1'):
 			Html_Table::table_gaya_1($classTable, $myTable, $row);
@@ -18,7 +19,9 @@ class Html_Table
 		elseif ($pilih == '4'):  
 			Html_Table::table_gaya_4($classTable, $myTable, $row);
 		elseif ($pilih == '4_1'):  
-			Html_Table::table_gaya_4_1($classTable, $myTable, $row);
+			Html_Table::table_gaya_4_1($classTable, $myTable, $row, $header, $id);
+		elseif ($pilih == '4_2'):  
+			Html_Table::table_gaya_4_1($classTable, $myTable, $row, $header, $id);
 		elseif ($pilih == '5'): 
 			Html_Table::table_gaya_5($classTable, $myTable, $row);
 		endif;
@@ -142,9 +145,10 @@ class Html_Table
 			?></table><?php echo "\r\t\t\t"; 
 	}//////////////////////////////////////////////////////////////////////////////////////////////////////////
 #------------------------------------------------------------------------------------------
-	public static function table_gaya_4_1($classTable = 'excel', $myTable, $row)
+	public static function table_gaya_4_1($classTable = 'excel', $myTable, $row, 
+	$header = null, $id = null)
 	{//////////////////////////////////////////////////////////////////////////////////////////////////////////
-			?><table class="<?php echo $classTable ?>">
+			?><table class="<?php echo $classTable ?>" id="<?php echo $id ?>">
 			<?php $printed_headers = false; # mula bina jadual
 			#-----------------------------------------------------------------
 			for ($kira=0; $kira < count($row); $kira++)
@@ -157,6 +161,26 @@ class Html_Table
 					Html_Url::pilihURL($key, $data);
 				endforeach; ?>  
 			</tr></tbody><?php echo "\n\t\t\t"; 
+			}#-----------------------------------------------------------------
+			?></table><?php
+	}//////////////////////////////////////////////////////////////////////////////////////////////////////////
+#------------------------------------------------------------------------------------------
+	public static function table_gaya_4_2($classTable = 'excel', $myTable, $row, 
+	$header = null, $id = null)
+	{//////////////////////////////////////////////////////////////////////////////////////////////////////////
+			?><table class="<?php echo $classTable ?>" id="<?php echo $id ?>">
+			<?php $printed_headers = false; # mula bina jadual
+			#-----------------------------------------------------------------
+			for ($kira=0; $kira < count($row); $kira++)
+			{	# cetak tajuk hanya sekali sahaja:
+				$printed_headers = Html_Table::tajukjadual_0(
+				$printed_headers, $row, $kira);
+			# cetak hasil $data --------------------------------------------
+			?><tr><?php 
+				foreach ( $row[$kira] as $key=>$data ) :
+					Html_Url::pilihURL($key, $data);
+				endforeach; ?>  
+			</tr><?php echo "\n\t\t\t"; 
 			}#-----------------------------------------------------------------
 			?></table><?php
 	}//////////////////////////////////////////////////////////////////////////////////////////////////////////
