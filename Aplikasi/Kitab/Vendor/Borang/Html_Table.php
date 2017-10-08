@@ -21,7 +21,7 @@ class Html_Table
 		elseif ($pilih == '4_1'):  
 			Html_Table::table_gaya_4_1($classTable, $myTable, $row, $header, $id);
 		elseif ($pilih == '4_2'):  
-			Html_Table::table_gaya_4_1($classTable, $myTable, $row, $header, $id);
+			Html_Table::table_gaya_4_2($classTable, $myTable, $row, $header, $id);
 		elseif ($pilih == '5'): 
 			Html_Table::table_gaya_5($classTable, $myTable, $row);
 		endif;
