@@ -131,5 +131,74 @@ class Pelajar extends \Aplikasi\Kitab\Kawal
 		$this->paparKandungan('slip_peperiksaan');
 	}
 #------------------------------------------------------------------------------------------------
+	public function peperiksaan($profil,$id = null)
+	{
+		# Set pemboleubah utama
+		$jadual = 'biodata_pelajar';
+		$this->papar->senarai['Report Class Examination'] = $this->tanya->laporanPeperiksaan($jadual, $id);
+		$this->papar->_jadual = $jadual;
+
+		# Pergi papar kandungan
+		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
+		$this->paparKandungan('index_jadual');
+	}
+#------------------------------------------------------------------------------------------------
+	public function laporanSubjek($profil,$id = null)
+	{
+		# Set pemboleubah utama
+		$jadual = 'biodata_pelajar';
+		$this->papar->senarai = $this->tanya->laporanSubjek($jadual, $id);
+		$this->papar->_jadual = $jadual;
+
+		# Scrip untuk js dan css
+		$this->papar->js = array('http://code.highcharts.com/highcharts.js',
+			'https://code.highcharts.com/modules/data.js',
+			'http://code.highcharts.com/modules/exporting.js');
+
+		# Pergi papar kandungan
+		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
+		//$this->paparKandungan('index_jadual');
+		$this->paparKandungan('laporan_peperiksaan_subjek');
+	}
+#------------------------------------------------------------------------------------------------
+	public function analisapencapaian()
+	{
+		# Set pemboleubah utama
+		$jadual = 'biodata_pelajar';
+		$this->papar->senarai['Analisis By Subject'] = $this->tanya->laporanAnalisaPencapaianPelajar($jadual);
+		$this->papar->_jadual = $jadual;
+		$this->papar->jenisBorang = 'papar';
+
+		# Pergi papar kandungan
+		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
+		$this->paparKandungan('index_jadual');
+	}
+#------------------------------------------------------------------------------------------------
+	public function kedatangan()
+	{
+		# Set pemboleubah utama
+		$jadual = 'biodata_pelajar';
+		$this->papar->senarai['Kedatangan Pelajar'] = $this->tanya->laporanKedatanganPelajar($jadual);
+		$this->papar->_jadual = $jadual;
+		$this->papar->jenisBorang = 'papar';
+
+		# Pergi papar kandungan
+		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
+		$this->paparKandungan('index_jadual');
+	}
+#------------------------------------------------------------------------------------------------
+	public function hafazan()
+	{
+		# Set pemboleubah utama
+		$jadual = 'biodata_pelajar';
+		$this->papar->senarai['Pengurusan Hafazan'] = $this->tanya->laporanPengurusanHafazan($jadual);
+		$this->papar->_jadual = $jadual;
+		$this->papar->jenisBorang = 'papar';
+
+		# Pergi papar kandungan
+		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
+		$this->paparKandungan('index_jadual');
+	}
+#------------------------------------------------------------------------------------------------
 #==========================================================================================
 }
