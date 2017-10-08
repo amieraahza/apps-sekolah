@@ -51,13 +51,13 @@ class Pelajar extends \Aplikasi\Kitab\Kawal
 		//$this->semakPembolehubah($this->papar->medanbaru); # Semak data dulu
 		$this->paparKandungan('pendaftaran');
 	}
-
+#------------------------------------------------------------------------------------------------
 	function semakDaftarBaru()
 	{
 		# Semak data $_POST
 		echo '<pre>$_POST->'; print_r($_POST) . '</pre>| ';
 	}
-
+#------------------------------------------------------------------------------------------------
 	function paparBiodata()
 	{
 		# Set pemboleubah utama
@@ -70,7 +70,7 @@ class Pelajar extends \Aplikasi\Kitab\Kawal
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$this->paparKandungan('senarai_pelajar');
 	}
-
+#------------------------------------------------------------------------------------------------
 	function laporanDaftar()
 	{
 		# Set pemboleubah utama
@@ -83,7 +83,7 @@ class Pelajar extends \Aplikasi\Kitab\Kawal
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$this->paparKandungan('laporan_pendaftaran');
 	}
-
+#------------------------------------------------------------------------------------------------
 	public function paparSemua()
 	{
 		# Set pemboleubah utama
@@ -96,7 +96,7 @@ class Pelajar extends \Aplikasi\Kitab\Kawal
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$this->paparKandungan('profil_pelajar');
 	}
-
+#------------------------------------------------------------------------------------------------
 	public function papar($profil,$id)
 	{
 		# Set pemboleubah utama
@@ -113,5 +113,23 @@ class Pelajar extends \Aplikasi\Kitab\Kawal
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$this->paparKandungan('papar_profil');
 	}
+#------------------------------------------------------------------------------------------------
+	public function slippeperiksaan($profil,$id = null)
+	{
+		# Set pemboleubah utama
+		$jadual = 'biodata_pelajar';
+		$this->papar->senarai = $this->tanya->dataSlipPeperiksaan($jadual, $id);
+		$this->papar->_jadual = $jadual;
+		$this->papar->jenisBorang = 'papar';
+		$this->papar->tajukbesar1 = 'Student Assessment Result';
+		$this->papar->tajukbesar2 = null;
+		$this->papar->tajukbesar3 = 'Summary';
+		$this->papar->tajukbesar4 = 'Grade Reference';
+
+		# Pergi papar kandungan
+		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
+		$this->paparKandungan('slip_peperiksaan');
+	}
+#------------------------------------------------------------------------------------------------
 #==========================================================================================
 }
