@@ -5,7 +5,6 @@ class Html_Table
 #==========================================================================================
 	public static function papar_jadual($row, $myTable, $pilih, $classTable, $header = null)
 	{# mula untuk kod php+html 
-		//echo 'mahu pilih apa?|';
 		if ($pilih == '1'):
 			Html_Table::table_gaya_1($classTable, $myTable, $row);
 		elseif ($pilih == '1_header'):
@@ -32,8 +31,9 @@ class Html_Table
 			<?php $printed_headers = false; # mula bina jadual
 			#-----------------------------------------------------------------
 			for ($kira=0; $kira < count($row); $kira++)
-			{ $printed_headers = Html_Table::tajukjadual_1(
-				$printed_headers, $row, $kira); # cetak tajuk hanya sekali sahaja:
+			{	# cetak tajuk hanya sekali sahaja:
+				$printed_headers = Html_Table::tajukjadual_1(
+				$printed_headers, $row, $kira);
 			#- cetak hasil $data --------------------------------------------
 			?><tbody><tr>
 			<td><?php echo $kira+1 ?></td>	
@@ -53,8 +53,9 @@ class Html_Table
 			$printed_headers = false; # mula bina jadual
 			#-----------------------------------------------------------------
 			for ($kira=0; $kira < count($row); $kira++)
-			{ $printed_headers = Html_Table::tajukjadual_1(
-				$printed_headers, $row, $kira); # cetak tajuk hanya sekali sahaja:
+			{	# cetak tajuk hanya sekali sahaja:
+				$printed_headers = Html_Table::tajukjadual_1(
+				$printed_headers, $row, $kira);
 			#- cetak hasil $data --------------------------------------------
 			?><tbody><tr>
 			<td><?php echo $kira+1 ?></td>	
@@ -73,9 +74,9 @@ class Html_Table
 			<?php $printed_headers = false; # mula bina jadual
 			#-----------------------------------------------------------------
 			for ($kira=0; $kira < count($row); $kira++)
-			{ $printed_headers = Html_Table::tajukjadual_1(
-				$printed_headers, $row, $kira); # cetak tajuk hanya sekali sahaja:
-
+			{	# cetak tajuk hanya sekali sahaja:
+				$printed_headers = Html_Table::tajukjadual_1(
+				$printed_headers, $row, $kira);
 			#- cetak hasil $data --------------------------------------------
 			?><tbody><tr>
 			<td><?php echo $kira+1 ?></td>	
@@ -95,20 +96,8 @@ class Html_Table
 			#-----------------------------------------------------------------
 			for ($kira=0; $kira < count($row); $kira++)
 			{	# cetak tajuk hanya sekali sahaja:
-				if ( !$printed_headers ) : ?>
-			<thead><tr>
-			<th>#</th><?php
-					foreach ( array_keys($row[$kira]) AS $tajuk ) 
-					{ 	if ( !is_int($tajuk) ) :
-							$paparTajuk = ($tajuk=='nama') ?
-							$tajuk . '(jadual:' . $myTable . ')'
-							: $tajuk; ?>
-			<th><?php echo $paparTajuk ?></th>
-			<?php		endif;
-					}
-			?></tr></thead><?php
-					$printed_headers = true; 
-				endif; 
+				$printed_headers = Html_Table::tajukjadual_2(
+				$printed_headers, $row, $kira, $myTable); 
 			#- cetak hasil $data ---------------------------------------------?>
 			<tbody><tr>
 			<td><?php echo $kira+1 ?></td>	
@@ -140,8 +129,9 @@ class Html_Table
 			<?php $printed_headers = false; # mula bina jadual
 			#-----------------------------------------------------------------
 			for ($kira=0; $kira < count($row); $kira++)
-			{ $printed_headers = Html_Table::tajukjadual_0(
-				$printed_headers, $row, $kira); # cetak tajuk hanya sekali sahaja:
+			{	# cetak tajuk hanya sekali sahaja:
+				$printed_headers = Html_Table::tajukjadual_0(
+				$printed_headers, $row, $kira);
 			# cetak hasil $data --------------------------------------------
 			?><tbody><tr><?php 
 				foreach ( $row[$kira] as $key=>$data ) : ?>
@@ -158,8 +148,9 @@ class Html_Table
 			<?php $printed_headers = false; # mula bina jadual
 			#-----------------------------------------------------------------
 			for ($kira=0; $kira < count($row); $kira++)
-			{ $printed_headers = Html_Table::tajukjadual_0(
-				$printed_headers, $row, $kira); # cetak tajuk hanya sekali sahaja:
+			{	# cetak tajuk hanya sekali sahaja:
+				$printed_headers = Html_Table::tajukjadual_0(
+				$printed_headers, $row, $kira);
 			# cetak hasil $data --------------------------------------------
 			?><tbody><tr><?php 
 				foreach ( $row[$kira] as $key=>$data ) :
@@ -224,6 +215,26 @@ class Html_Table
 			<?php endforeach; ?></tr></thead>
 			<?php	$printed_headers = true; 
 				endif;
+
+			return $printed_headers;
+	}
+#------------------------------------------------------------------------------------------
+	public static function tajukjadual_2($printed_headers, $row, $kira, $myTable)
+	{# cetak tajuk hanya sekali sahaja: 
+			if ( !$printed_headers ) : ?>
+			<thead><tr>
+			<th>#</th><?php
+					foreach ( array_keys($row[$kira]) AS $tajuk )
+					{ 	if ( !is_int($tajuk) ) :
+							$paparTajuk = ($tajuk=='nama') ?
+							$tajuk . '(jadual:' . $myTable . ')'
+							: $tajuk; ?>
+			<th><?php echo $paparTajuk ?></th>
+			<?php		endif;
+					}
+			?></tr></thead><?php
+					$printed_headers = true;
+				endif; 
 
 			return $printed_headers;
 	}
