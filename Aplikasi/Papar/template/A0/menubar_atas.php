@@ -37,6 +37,15 @@ $icon['Stats'] = '<span class="glyphicon glyphicon-stats"></span>';
 	</ul>
 </li>
 <li class="dropdown"><a <?php echo $nav ?> href="#">
+	<i class="fa fa-book fa-2x" aria-hidden="true"></i>
+	Akedemik<b class="caret"></b></a>
+	<ul class="dropdown-menu">
+	<li><a href="<?php echo URL ?>pelajar/slippeperiksaan/1/1">
+		<i class="fa fa-newspaper-o fa-2x" aria-hidden="true"></i>
+		Slip peperiksaan</a></li>
+	</ul>
+</li>
+<li class="dropdown"><a <?php echo $nav ?> href="#">
 	<i class="fa fa-trophy fa-2x" aria-hidden="true"></i>
 	Ko-kurikulum</a></li>
 <li class="dropdown"><a <?php echo $nav ?> href="#">
