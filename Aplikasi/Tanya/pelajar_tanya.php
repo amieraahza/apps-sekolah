@@ -1049,5 +1049,208 @@ class Pelajar_Tanya extends \Aplikasi\Kitab\Tanya
 		return $medan; # pulangkan pemboleubah
 	}
 #------------------------------------------------------------------------------------------------------------------
+	public function laporanAnalisaPencapaianPelajar($jadual)
+	{
+		# ada nilai
+		$hasil = array(
+			0 => array(
+				'Code' => 'CS', 'Subject' => 'computer studies',
+				'Registered<br>Student' => 44, 'Absence' => 0, 'Total<br>Student' => 44,
+				'Num' => 5, '%' => 20, # A
+				'Num&nbsp;' => 5, '%&nbsp;' => 20, # B
+				'Num&nbsp;&nbsp;' => 5, '%&nbsp;&nbsp;' => 20, # C
+				'Num</></></>' => 5, '%</></></>' => 20, # D
+				'Num</></></></>' => 5, '%</></></></>' => 20, # E
+				'Num</></></></></>' => 5, '%</></></></></>' => 20, # Pass
+				'Num</></></></></></>' => 5, '%</></></></></></>' => 20, # Fail
+				'Average<br>Mark' => 75.15, 'GP' => 2.02,
+				),
+			1 => array(
+				'code' => '114',	'subject' => 'english language',
+				'Registered<br>Student' => 44, 'Absence' => 0, 'Total<br>Student' => 44,
+				'Num' => 5, '%' => 20, # A
+				'Num&nbsp;' => 5, '%&nbsp;' => 20, # B
+				'Num&nbsp;&nbsp;' => 5, '%&nbsp;&nbsp;' => 20, # C
+				'Num</></></>' => 5, '%</></></>' => 20, # D
+				'Num</></></></>' => 5, '%</></></></>' => 20, # E
+				'Num</></></></></>' => 5, '%</></></></></>' => 20, # Pass
+				'Num</></></></></></>' => 5, '%</></></></></></>' => 20, # Fail
+				'Average<br>Mark' => 75.15, 'GP' => 2.02,
+			),
+			2 => array(
+				'code' => 'FL',	'subject' => 'french language',
+				'Registered<br>Student' => 44, 'Absence' => 0, 'Total<br>Student' => 44,
+				'Num' => 5, '%' => 20, # A
+				'Num&nbsp;' => 5, '%&nbsp;' => 20, # B
+				'Num&nbsp;&nbsp;' => 5, '%&nbsp;&nbsp;' => 20, # C
+				'Num</></></>' => 5, '%</></></>' => 20, # D
+				'Num</></></></>' => 5, '%</></></></>' => 20, # E
+				'Num</></></></></>' => 5, '%</></></></></>' => 20, # Pass
+				'Num</></></></></></>' => 5, '%</></></></></></>' => 20, # Fail
+				'Average<br>Mark' => 75.15, 'GP' => 2.02,
+			),
+			3 => array(
+				'code' => 'IS',	'subject' => 'islamic studies',
+				'Registered<br>Student' => 44, 'Absence' => 0, 'Total<br>Student' => 44,
+				'Num' => 5, '%' => 20, # A
+				'Num&nbsp;' => 5, '%&nbsp;' => 20, # B
+				'Num&nbsp;&nbsp;' => 5, '%&nbsp;&nbsp;' => 20, # C
+				'Num</></></>' => 5, '%</></></>' => 20, # D
+				'Num</></></></>' => 5, '%</></></></>' => 20, # E
+				'Num</></></></></>' => 5, '%</></></></></>' => 20, # Pass
+				'Num</></></></></></>' => 5, '%</></></></></></>' => 20, # Fail
+				'Average<br>Mark' => 75.15, 'GP' => 2.02,
+			),
+			4 => array(
+				'code' => 'JL',	'subject' => 'japanese language',
+				'Registered<br>Student' => 44, 'Absence' => 0, 'Total<br>Student' => 44,
+				'Num' => 5, '%' => 20, # A
+				'Num&nbsp;' => 5, '%&nbsp;' => 20, # B
+				'Num&nbsp;&nbsp;' => 5, '%&nbsp;&nbsp;' => 20, # C
+				'Num</></></>' => 5, '%</></></>' => 20, # D
+				'Num</></></></>' => 5, '%</></></></>' => 20, # E
+				'Num</></></></></>' => 5, '%</></></></></>' => 20, # Pass
+				'Num</></></></></></>' => 5, '%</></></></></></>' => 20, # Fail
+				'Average<br>Mark' => 75.15, 'GP' => 2.02,
+			),
+			5 => array(
+				'code' => '011',	'subject' => 'malay language (comprehension)',
+				'Registered<br>Student' => 44, 'Absence' => 0, 'Total<br>Student' => 44,
+				'Num' => 5, '%' => 20, # A
+				'Num&nbsp;' => 5, '%&nbsp;' => 20, # B
+				'Num&nbsp;&nbsp;' => 5, '%&nbsp;&nbsp;' => 20, # C
+				'Num</></></>' => 5, '%</></></>' => 20, # D
+				'Num</></></></>' => 5, '%</></></></>' => 20, # E
+				'Num</></></></></>' => 5, '%</></></></></>' => 20, # Pass
+				'Num</></></></></></>' => 5, '%</></></></></></>' => 20, # Fail
+				'Average<br>Mark' => 75.15, 'GP' => 2.02,
+			),
+			6 => array(
+				'code' => '012',	'subject' => 'malay language (essay)',
+				'Registered<br>Student' => 44, 'Absence' => 0, 'Total<br>Student' => 44,
+				'Num' => 5, '%' => 20, # A
+				'Num&nbsp;' => 5, '%&nbsp;' => 20, # B
+				'Num&nbsp;&nbsp;' => 5, '%&nbsp;&nbsp;' => 20, # C
+				'Num</></></>' => 5, '%</></></>' => 20, # D
+				'Num</></></></>' => 5, '%</></></></>' => 20, # E
+				'Num</></></></></>' => 5, '%</></></></></>' => 20, # Pass
+				'Num</></></></></></>' => 5, '%</></></></></></>' => 20, # Fail
+				'Average<br>Mark' => 75.15, 'GP' => 2.02,
+			),
+			7 => array(
+				'code' => 'MAA',	'subject' => 'madarin advance',
+				'Registered<br>Student' => 44, 'Absence' => 0, 'Total<br>Student' => 44,
+				'Num' => 5, '%' => 20, # A
+				'Num&nbsp;' => 5, '%&nbsp;' => 20, # B
+				'Num&nbsp;&nbsp;' => 5, '%&nbsp;&nbsp;' => 20, # C
+				'Num</></></>' => 5, '%</></></>' => 20, # D
+				'Num</></></></>' => 5, '%</></></></>' => 20, # E
+				'Num</></></></></>' => 5, '%</></></></></>' => 20, # Pass
+				'Num</></></></></></>' => 5, '%</></></></></></>' => 20, # Fail
+				'Average<br>Mark' => 75.15, 'GP' => 2.02,
+			),
+			8 => array(
+				'code' => 'MAE',	'subject' => 'madarin elementary',
+				'Registered<br>Student' => 44, 'Absence' => 0, 'Total<br>Student' => 44,
+				'Num' => 5, '%' => 20, # A
+				'Num&nbsp;' => 5, '%&nbsp;' => 20, # B
+				'Num&nbsp;&nbsp;' => 5, '%&nbsp;&nbsp;' => 20, # C
+				'Num</></></>' => 5, '%</></></>' => 20, # D
+				'Num</></></></>' => 5, '%</></></></>' => 20, # E
+				'Num</></></></></>' => 5, '%</></></></></>' => 20, # Pass
+				'Num</></></></></></>' => 5, '%</></></></></></>' => 20, # Fail
+				'Average<br>Mark' => 75.15, 'GP' => 2.02,
+			),
+			9 => array(
+				'code' => '015',	'subject' => 'mathematics',
+				'Registered<br>Student' => 44, 'Absence' => 0, 'Total<br>Student' => 44,
+				'Num' => 5, '%' => 20, # A
+				'Num&nbsp;' => 5, '%&nbsp;' => 20, # B
+				'Num&nbsp;&nbsp;' => 5, '%&nbsp;&nbsp;' => 20, # C
+				'Num</></></>' => 5, '%</></></>' => 20, # D
+				'Num</></></></>' => 5, '%</></></></>' => 20, # E
+				'Num</></></></></>' => 5, '%</></></></></>' => 20, # Pass
+				'Num</></></></></></>' => 5, '%</></></></></></>' => 20, # Fail
+				'Average<br>Mark' => 75.15, 'GP' => 2.02,
+			),
+			10 => array(
+				'code' => 'ME',	'subject' => 'moral education',
+				'Registered<br>Student' => 44, 'Absence' => 0, 'Total<br>Student' => 44,
+				'Num' => 5, '%' => 20, # A
+				'Num&nbsp;' => 5, '%&nbsp;' => 20, # B
+				'Num&nbsp;&nbsp;' => 5, '%&nbsp;&nbsp;' => 20, # C
+				'Num</></></>' => 5, '%</></></>' => 20, # D
+				'Num</></></></>' => 5, '%</></></></>' => 20, # E
+				'Num</></></></></>' => 5, '%</></></></></>' => 20, # Pass
+				'Num</></></></></></>' => 5, '%</></></></></></>' => 20, # Fail
+				'Average<br>Mark' => 75.15, 'GP' => 2.02,
+			),
+			11 => array(
+				'code' => 'MW',	'subject' => 'musical world',
+				'Registered<br>Student' => 44, 'Absence' => 0, 'Total<br>Student' => 44,
+				'Num' => 5, '%' => 20, # A
+				'Num&nbsp;' => 5, '%&nbsp;' => 20, # B
+				'Num&nbsp;&nbsp;' => 5, '%&nbsp;&nbsp;' => 20, # C
+				'Num</></></>' => 5, '%</></></>' => 20, # D
+				'Num</></></></>' => 5, '%</></></></>' => 20, # E
+				'Num</></></></></>' => 5, '%</></></></></>' => 20, # Pass
+				'Num</></></></></></>' => 5, '%</></></></></></>' => 20, # Fail
+				'Average<br>Mark' => 75.15, 'GP' => 2.02,
+			),
+			12 => array(
+				'code' => '018',	'subject' => 'science and technology',
+				'Registered<br>Student' => 44, 'Absence' => 0, 'Total<br>Student' => 44,
+				'Num' => 5, '%' => 20, # A
+				'Num&nbsp;' => 5, '%&nbsp;' => 20, # B
+				'Num&nbsp;&nbsp;' => 5, '%&nbsp;&nbsp;' => 20, # C
+				'Num</></></>' => 5, '%</></></>' => 20, # D
+				'Num</></></></>' => 5, '%</></></></>' => 20, # E
+				'Num</></></></></>' => 5, '%</></></></></>' => 20, # Pass
+				'Num</></></></></></>' => 5, '%</></></></></></>' => 20, # Fail
+				'Average<br>Mark' => 75.15, 'GP' => 2.02,
+			),
+			13 => array(
+				'code' => 'VA',	'subject' => 'visual arts',
+				'Registered<br>Student' => 44, 'Absence' => 0, 'Total<br>Student' => 44,
+				'Num' => 5, '%' => 20, # A
+				'Num&nbsp;' => 5, '%&nbsp;' => 20, # B
+				'Num&nbsp;&nbsp;' => 5, '%&nbsp;&nbsp;' => 20, # C
+				'Num</></></>' => 5, '%</></></>' => 20, # D
+				'Num</></></></>' => 5, '%</></></></>' => 20, # E
+				'Num</></></></></>' => 5, '%</></></></></>' => 20, # Pass
+				'Num</></></></></></>' => 5, '%</></></></></></>' => 20, # Fail
+				'Average<br>Mark' => 75.15, 'GP' => 2.02,
+			),
+			14 => array(
+				'code' => 'WM',	'subject' => 'world math',
+				'Registered<br>Student' => 44, 'Absence' => 0, 'Total<br>Student' => 44,
+				'Num' => 5, '%' => 20, # A
+				'Num&nbsp;' => 5, '%&nbsp;' => 20, # B
+				'Num&nbsp;&nbsp;' => 5, '%&nbsp;&nbsp;' => 20, # C
+				'Num</></></>' => 5, '%</></></>' => 20, # D
+				'Num</></></></>' => 5, '%</></></></>' => 20, # E
+				'Num</></></></></>' => 5, '%</></></></></>' => 20, # Pass
+				'Num</></></></></></>' => 5, '%</></></></></></>' => 20, # Fail
+				'Average<br>Mark' => 75.15, 'GP' => 2.02,
+			),
+			15 => array(
+				'code' => 'WS',	'subject' => 'world science',
+				'Registered<br>Student' => 44, 'Absence' => 0, 'Total<br>Student' => 44,
+				'Num' => 5, '%' => 20, # A
+				'Num&nbsp;' => 5, '%&nbsp;' => 20, # B
+				'Num&nbsp;&nbsp;' => 5, '%&nbsp;&nbsp;' => 20, # C
+				'Num</></></>' => 5, '%</></></>' => 20, # D
+				'Num</></></></>' => 5, '%</></></></>' => 20, # E
+				'Num</></></></></>' => 5, '%</></></></></>' => 20, # Pass
+				'Num</></></></></></>' => 5, '%</></></></></></>' => 20, # Fail
+				'Average<br>Mark' => 75.15, 'GP' => 2.02,
+			),
+		);
+
+		$hasil2 = array(); # tiada nilai
+
+		return $hasil; # pulangkan pemboleubah
+	}
+#------------------------------------------------------------------------------------------------------------------
 #==========================================================================================
 }
