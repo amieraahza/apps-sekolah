@@ -38,11 +38,26 @@ $icon['Stats'] = '<span class="glyphicon glyphicon-stats"></span>';
 </li>
 <li class="dropdown"><a <?php echo $nav ?> href="#">
 	<i class="fa fa-book fa-2x" aria-hidden="true"></i>
-	Akedemik<b class="caret"></b></a>
+	Akademik<b class="caret"></b></a>
 	<ul class="dropdown-menu">
+	<li><a href="<?php echo URL ?>pelajar/peperiksaan/1/1">
+		<i class="fa fa-newspaper-o fa-2x" aria-hidden="true"></i>
+		Peperiksaan</a></li>
+	<li><a href="<?php echo URL ?>pelajar/laporanSubjek/1/1">
+		<i class="fa fa-newspaper-o fa-2x" aria-hidden="true"></i>
+		Laporan Subjek</a></li>
 	<li><a href="<?php echo URL ?>pelajar/slippeperiksaan/1/1">
 		<i class="fa fa-newspaper-o fa-2x" aria-hidden="true"></i>
 		Slip peperiksaan</a></li>
+	<li><a href="<?php echo URL ?>pelajar/analisapencapaian">
+		<i class="fa fa-newspaper-o fa-2x" aria-hidden="true"></i>
+		Analisa Pencapaian</a></li>
+	<li><a href="<?php echo URL ?>pelajar/kedatangan">
+		<i class="fa fa-newspaper-o fa-2x" aria-hidden="true"></i>
+		Kedatangan Pelajar</a></li>
+	<li><a href="<?php echo URL ?>pelajar/hafazan">
+		<i class="fa fa-newspaper-o fa-2x" aria-hidden="true"></i>
+		Pengurusan Hafazan</a></li>
 	</ul>
 </li>
 <li class="dropdown"><a <?php echo $nav ?> href="#">
