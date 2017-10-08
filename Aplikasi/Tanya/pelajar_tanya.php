@@ -898,5 +898,156 @@ class Pelajar_Tanya extends \Aplikasi\Kitab\Tanya
 		return $medan; # pulangkan pemboleubah
 	}	
 #------------------------------------------------------------------------------------------------------------------
+	public function dataSlipPeperiksaan($jadual, $id)
+	{
+		# ada nilai
+		$medan['bhgn1'] = array( '0' => array (
+				'name' => 'JANET',		
+				'matric' => 'JA0101',
+				'ic no' => '150101101002',
+		));
+		$medan['bhgn2'] = array ('0' => array (
+				'school' => 'Sek Keb Darul Iman',
+				'examination' => 'curriculum assessment 1',
+				'class' => '2 Anggerik / 2016',
+		));
+		$medan['subject'] = array(
+			'0' => array(
+				'code' => 'CAC',
+				'subject' => 'civics and citizenship',
+				'marks' => '85',
+				'grade' => 'A',
+				'remark by subject teacher' => 'Lorem Ipsum adalah text contoh digunakan didalam industri pencetakan dan typesetting'
+			),
+			'1' => array(
+				'code' => 'CS',
+				'subject' => 'computer studies',
+				'marks' => '92',
+				'grade' => 'A',
+				'remark by subject teacher' => 'Lorem Ipsum adalah text contoh digunakan didalam industri pencetakan dan typesetting'
+			),
+			'2' => array(
+				'code' => '12',
+				'subject' => 'english language',
+				'marks' => '92',
+				'grade' => 'A',
+				'remark by subject teacher' => 'Lorem Ipsum adalah text contoh digunakan didalam industri pencetakan dan typesetting'
+			),
+			'3' => array(
+				'code' => '23',
+				'subject' => 'geography',
+				'marks' => '92',
+				'grade' => 'A',
+				'remark by subject teacher' => 'Lorem Ipsum adalah text contoh digunakan didalam industri pencetakan dan typesetting'
+			),
+			'4' => array(
+				'code' => '21',
+				'subject' => 'history',
+				'marks' => '97',
+				'grade' => 'A',
+				'remark by subject teacher' => 'Lorem Ipsum adalah text contoh digunakan didalam industri pencetakan dan typesetting'
+			),
+			'5' => array(
+				'code' => 'JLE',
+				'subject' => 'japanese language - intermediate',
+				'marks' => '96',
+				'grade' => 'A',
+				'remark by subject teacher' => 'Lorem Ipsum adalah text contoh digunakan didalam industri pencetakan dan typesetting'
+			),
+			'6' => array(
+				'code' => '79',
+				'subject' => 'living skill',
+				'marks' => '98',
+				'grade' => 'A',
+				'remark by subject teacher' => 'Lorem Ipsum adalah text contoh digunakan didalam industri pencetakan dan typesetting'
+			),
+			'7' => array(
+				'code' => '02',
+				'subject' => 'malay language',
+				'marks' => '90',
+				'grade' => 'A',
+				'remark by subject teacher' => 'Lorem Ipsum adalah text contoh digunakan didalam industri pencetakan dan typesetting'
+			),
+			'8' => array(
+				'code' => '50',
+				'subject' => 'mathematics',
+				'marks' => '100',
+				'grade' => 'A',
+				'remark by subject teacher' => 'Lorem Ipsum adalah text contoh digunakan didalam industri pencetakan dan typesetting'
+			),
+			'9' => array(
+				'code' => 'ME',
+				'subject' => 'moral education',
+				'marks' => '98',
+				'grade' => 'A',
+				'remark by subject teacher' => 'Lorem Ipsum adalah text contoh digunakan didalam industri pencetakan dan typesetting'
+			),
+			'10' => array(
+				'code' => 'PEH',
+				'subject' => 'physical education & health',
+				'marks' => '81',
+				'grade' => 'B',
+				'remark by subject teacher' => 'Lorem Ipsum adalah text contoh digunakan didalam industri pencetakan dan typesetting'
+			),
+			'11' => array(
+				'code' => '55',
+				'subject' => 'science',
+				'marks' => '88',
+				'grade' => 'A',
+				'remark by subject teacher' => 'Lorem Ipsum adalah text contoh digunakan didalam industri pencetakan dan typesetting'
+			),
+			'12' => array(
+				'code' => 'VA',
+				'subject' => 'visual arts',
+				'marks' => '96',
+				'grade' => 'A',
+				'remark by subject teacher' => 'Lorem Ipsum adalah text contoh digunakan didalam industri pencetakan dan typesetting'
+			),
+		);
+		$medan['Summary'] = array( '0' => array(
+			'total subject' => '13',
+			'total mark' => '1205',
+			'average mark' => '92.69',
+			'cgpa' => '1.08',
+			'attendance' => '59/62',
+		));
+		$medan['Grade Referennce'] = array( 
+			0 => array(
+				'grade' => 'A',
+				'marks' => '85-100',
+				'axhievement' => 'Excellents'
+			),
+			1 => array(
+				'grade' => 'B',
+				'marks' => '70-84',
+				'axhievement' => 'Good'
+			),
+			2 => array(
+				'grade' => 'C',
+				'marks' => '60-69',
+				'axhievement' => 'Satisfactory'
+			),
+			3 => array(
+				'grade' => 'D',
+				'marks' => '50-59',
+				'axhievement' => 'Credit'
+			),
+			4 => array(
+				'grade' => 'E',
+				'marks' => '40-49',
+				'axhievement' => 'Pass'
+			),
+			5 => array(
+				'grade' => 'F',
+				'marks' => '0-39',
+				'axhievement' => 'Fail'
+			),
+		); 
+
+		$medan2 = array(); # tiada nilai
+
+		return $medan; # pulangkan pemboleubah
+	}
+#------------------------------------------------------------------------------------------------------------------
 #==========================================================================================
 }
