@@ -8,7 +8,8 @@ if (isset($this->js))
     foreach ($this->js as $js)
     {
         echo "\n";
-		?><script type="text/javascript" src="<?php echo SUMBER . $js ?>"></script><?php
+		/*?><script type="text/javascript" src="<?php echo SUMBER . $js ?>"></script><?php*/
+		?><script type="text/javascript" src="<?php echo $js ?>"></script><?php
     }
 }
 ?><?php 
@@ -113,7 +114,7 @@ echo "\n\n"; ?>
 	
 	.suggestionList li:hover {background-color: #659CD8;}
 </style>
-<?php elseif ( isset($dataURL[0]) && $dataURL[0]=='laporan')  :?>
+<?php elseif ( isset($dataURL[1]) && $dataURL[1]=='laporan') : echo "\n";?>
 <script>
 
 	var barChartData = {
@@ -150,6 +151,30 @@ echo "\n\n"; ?>
 	];
     var myPie = new Chart(document.getElementById("pie-chart").getContext("2d")).Pie(pieData);
 	
+</script>
+<?php elseif ( isset($dataURL[1]) && $dataURL[1]=='laporanSubjek') : echo "\n";?>
+<script>
+jQuery.noConflict();
+var example = 'column-parsed', 
+theme = 'default';
+(function($){ // encapsulate jQuery
+	Highcharts.chart('container', 
+	{
+		 data: { table: 'summary'  },
+		chart: { type: 'column' },
+		title: { text: 'Data dari jadual sedia ada' },
+		yAxis: {
+				allowDecimals: false,
+				title: { text: 'Units' }
+		},
+		tooltip: {
+			formatter: function () {
+				return '<b>' + this.series.name + '</b><br/>' +
+				this.point.y + ' ' + this.point.name.toLowerCase();
+			}
+		}
+	});	
+})(jQuery);
 </script>
 <?php /*else :?>
 <link rel="stylesheet" type="text/css" href="<?php echo JS ?>filter/susun.style.css" />
