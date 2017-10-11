@@ -1,5 +1,5 @@
 <?php
-namespace Aplikasi\Kitab; //echo __NAMESPACE__; 
+namespace Aplikasi\Kitab; //echo __NAMESPACE__;
 class Html_Ulli
 {
 #==========================================================================================
@@ -12,7 +12,7 @@ class Html_Ulli
 			else
 			{
 				HTML_Ulli::paparLi($jadual, $baris);
-			}	
+			}
 		} 
 	}
 #------------------------------------------------------------------------------------------
@@ -33,16 +33,26 @@ class Html_Ulli
 			else
 			{
 				HTML_Ulli::paparLi($jadual, $baris);
-			}	
+			}
 		} 
+	}
+#------------------------------------------------------------------------------------------
+	public static function paparGraf0($id)
+	{
+		echo "\t\t";
+		?><div id="<?php echo $id ?>" style="min-width: 500px; height: 500px;<?php
+		?> margin: 0 auto"></div><?php
+		echo "\n";
 	}
 #------------------------------------------------------------------------------------------
 	public static function paparGraf1($myTable)
 	{
-	?><div class="tab-pane" id="<?php echo $myTable ?>"><?php echo "\n";
-	?>	<div id="kontena1" style="min-width: 500px; height: 500px; margin: 0 auto"></div><?php
-	echo "\n";
-	?></div<!-- class="tab-pane" id="<?php echo $myTable ?>" --><?php  echo "\n";
+		echo "\t\t";
+		?><div class="tab-pane" id="<?php echo $myTable ?>"><?php echo "\n\t\t\t";
+		?><div id="kontena1" style="min-width: 500px; height: 500px;<?php
+		?> margin: 0 auto"></div><?php
+		echo "\n\t\t";
+		?></div<!-- class="tab-pane" id="<?php echo $myTable ?>" --><?php  echo "\n";
 	}
 #------------------------------------------------------------------------------------------
 	public static function paparGraf2($myTable)
