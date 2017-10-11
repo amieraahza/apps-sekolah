@@ -3,6 +3,11 @@ namespace Aplikasi\Kitab; //echo __NAMESPACE__;
 class Html_Url
 {
 #==========================================================================================
+	public static function pilihData($data)
+	{
+		?><td><?php echo $data ?></td><?php
+	}
+#------------------------------------------------------------------------------------------
 	public static function pilihURL($key, $data, $myTable = null)
 	{
 		if ($key=='no'):
