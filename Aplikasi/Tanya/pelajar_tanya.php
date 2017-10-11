@@ -3176,7 +3176,7 @@ class Pelajar_Tanya extends \Aplikasi\Kitab\Tanya
 	public function laporanSubjek($jadual)
 	{
 		# ada nilai
-		$hasil['Kelas'] = array(
+		$hasil['kelas'] = array(
 			'0' => array (
 				'matric' => 'JA0101',
 				'm/f' => 'F',
@@ -3467,82 +3467,22 @@ class Pelajar_Tanya extends \Aplikasi\Kitab\Tanya
 			),
 		); 
 
-		$hasil['Summary'] = array(
-			'0' => array (
-				'Summary' => 'Student',
-				'Total' => '36',
-				'%' => '100.00',
-			),
-			'1' => array (
-				'Summary' => 'Not Evaluate',
-				'Total' => '0',
-				'%' => '0.00',
-			),
-			'2' => array (
-				'Summary' => 'No Attend',
-				'Total' => '0',
-				'%' => '0.00',
-			),
-			'3' => array (
-				'Summary' => 'Total Student',
-				'Total' => '36',
-				'%' => '100.00',
-			),
-			'4' => array (
-				'Summary' => 'A',
-				'Total' => '16',
-				'%' => '44.44',
-			),
-			'5' => array (
-				'Summary' => 'B',
-				'Total' => '10',
-				'%' => '27.78',
-			),
-			'6' => array (
-				'Summary' => 'C',
-				'Total' => '5',
-				'%' => '13.89',
-			),
-			'7' => array (
-				'Summary' => 'D',
-				'Total' => '5',
-				'%' => '13.89',
-			),
-			'8' => array (
-				'Summary' => 'E',
-				'Total' => '0',
-				'%' => '0.00',
-			),
-			'9' => array (
-				'Summary' => 'Total Pass',
-				'Total' => '36',
-				'%' => '100.00',
-			),
-			'10' => array (
-				'Summary' => 'Total Fail',
-				'Total' => '0',
-				'%' => '0.00',
-			),
-			'11' => array (
-				'Summary' => 'Highest Mark',
-				'Total' => '100',
-				'%' => 'A',
-			),
-			'12' => array (
-				'Summary' => 'Lowest Mark',
-				'Total' => '54',
-				'%' => 'C',
-			),
-			'13' => array (
-				'Summary' => 'Average Mark',
-				'Total' => ' 84 ',
-				'%' => 'A',
-			),
-			'14' => array (
-				'Summary' => 'GP',
-				'Total' => '1.53',
-				'%' => '',
-			),
+		$hasil['datatable'] = array(
+			'0' => array ('Summary' => 'Student','Total' => '36','%' => '100.00'),
+			'1' => array ('Summary' => 'Not Evaluate','Total' => '0','%' => '0.00'),
+			'2' => array ('Summary' => 'No Attend','Total' => '0','%' => '0.00'),
+			'3' => array ('Summary' => 'Total Student','Total' => '36','%' => '100.00'),
+			'4' => array ('Summary' => 'A','Total' => '16','%' => '44.44'),
+			'5' => array ('Summary' => 'B','Total' => '10','%' => '27.78'),
+			'6' => array ('Summary' => 'C','Total' => '5','%' => '13.89'),
+			'7' => array ('Summary' => 'D','Total' => '5','%' => '13.89'),
+			'8' => array ('Summary' => 'E','Total' => '0','%' => '0.00'),
+			'9' => array ('Summary' => 'Total Pass','Total' => '36','%' => '100.00'),
+			'10' => array ('Summary' => 'Total Fail','Total' => '0','%' => '0.00'),
+			'11' => array ('Summary' => 'Highest Mark','Total' => '100','%' => 'A'),
+			'12' => array ('Summary' => 'Lowest Mark','Total' => '54','%' => 'C'),
+			'13' => array ('Summary' => 'Average Mark','Total' => '84','%' => 'A'),
+			'14' => array ('Summary' => 'GP','Total' => '1.53','%' => ''),
 		);
 
 		$hasil2 = array(); # tiada nilai
