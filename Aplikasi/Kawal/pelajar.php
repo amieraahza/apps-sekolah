@@ -13,7 +13,7 @@ class Pelajar extends \Aplikasi\Kitab\Kawal
 
 	public function index()
 	{
-		# Set pemboleubah utama
+		# Set pembolehubah utama
 		$this->papar->tajuk = namaClass($this);
 		echo '<hr> Nama class : ' . namaClass($this) . '<hr>';
 
@@ -41,7 +41,7 @@ class Pelajar extends \Aplikasi\Kitab\Kawal
 #==========================================================================================
 	function daftarBaru()
 	{
-		# Set pemboleubah utama
+		# Set pembolehubah utama
 		$jadual = 'biodata_pelajar';
 		$this->papar->medanbaru = $this->tanya->medanbaru($jadual);
 		$this->papar->jadual = $jadual;
@@ -60,7 +60,7 @@ class Pelajar extends \Aplikasi\Kitab\Kawal
 #------------------------------------------------------------------------------------------------
 	function paparBiodata()
 	{
-		# Set pemboleubah utama
+		# Set pembolehubah utama
 		$jadual = 'biodata_pelajar';
 		$this->papar->senarai['Registration Proses'] = $this->tanya->datapelajar($jadual);
 		$this->papar->_jadual = $jadual;
@@ -73,7 +73,7 @@ class Pelajar extends \Aplikasi\Kitab\Kawal
 #------------------------------------------------------------------------------------------------
 	function laporanDaftar()
 	{
-		# Set pemboleubah utama
+		# Set pembolehubah utama
 		$jadual = 'biodata_pelajar';
 		$this->papar->senarai['Registration Report'] = $this->tanya->laporanDaftar($jadual);
 		$this->papar->_jadual = $jadual;
@@ -86,7 +86,7 @@ class Pelajar extends \Aplikasi\Kitab\Kawal
 #------------------------------------------------------------------------------------------------
 	public function paparSemua()
 	{
-		# Set pemboleubah utama
+		# Set pembolehubah utama
 		$jadual = 'biodata_pelajar';
 		$this->papar->senarai['Senarai Semua Pelajar'] = $this->tanya->profilSemua($jadual);
 		$this->papar->_jadual = $jadual;
@@ -99,7 +99,7 @@ class Pelajar extends \Aplikasi\Kitab\Kawal
 #------------------------------------------------------------------------------------------------
 	public function papar($profil,$id)
 	{
-		# Set pemboleubah utama
+		# Set pembolehubah utama
 		$jadual = 'biodata_pelajar';
 		$this->papar->senarai = $this->tanya->profilSeorang($jadual, $id);
 		$this->papar->_jadual = $jadual;
@@ -116,7 +116,7 @@ class Pelajar extends \Aplikasi\Kitab\Kawal
 #------------------------------------------------------------------------------------------------
 	public function slippeperiksaan($profil,$id = null)
 	{
-		# Set pemboleubah utama
+		# Set pembolehubah utama
 		$jadual = 'biodata_pelajar';
 		$this->papar->senarai = $this->tanya->dataSlipPeperiksaan($jadual, $id);
 		$this->papar->_jadual = $jadual;
@@ -133,7 +133,7 @@ class Pelajar extends \Aplikasi\Kitab\Kawal
 #------------------------------------------------------------------------------------------------
 	public function peperiksaan($profil,$id = null)
 	{
-		# Set pemboleubah utama
+		# Set pembolehubah utama
 		$jadual = 'biodata_pelajar';
 		$this->papar->senarai['Report Class Examination'] = $this->tanya->laporanPeperiksaan($jadual, $id);
 		$this->papar->_jadual = $jadual;
@@ -145,7 +145,7 @@ class Pelajar extends \Aplikasi\Kitab\Kawal
 #------------------------------------------------------------------------------------------------
 	public function laporanSubjek($profil,$id = null)
 	{
-		# Set pemboleubah utama
+		# Set pembolehubah utama
 		$jadual = 'biodata_pelajar';
 		$this->papar->senarai = $this->tanya->laporanSubjek($jadual, $id);
 		$this->papar->_jadual = $jadual;
@@ -163,7 +163,7 @@ class Pelajar extends \Aplikasi\Kitab\Kawal
 #------------------------------------------------------------------------------------------------
 	public function analisapencapaian()
 	{
-		# Set pemboleubah utama
+		# Set pembolehubah utama
 		$jadual = 'biodata_pelajar';
 		$this->papar->senarai['Analisis By Subject'] = $this->tanya->laporanAnalisaPencapaianPelajar($jadual);
 		$this->papar->_jadual = $jadual;
@@ -176,7 +176,7 @@ class Pelajar extends \Aplikasi\Kitab\Kawal
 #------------------------------------------------------------------------------------------------
 	public function kedatangan()
 	{
-		# Set pemboleubah utama
+		# Set pembolehubah utama
 		$jadual = 'biodata_pelajar';
 		$this->papar->senarai['Kedatangan Pelajar'] = $this->tanya->laporanKedatanganPelajar($jadual);
 		$this->papar->_jadual = $jadual;
@@ -189,7 +189,7 @@ class Pelajar extends \Aplikasi\Kitab\Kawal
 #------------------------------------------------------------------------------------------------
 	public function hafazan()
 	{
-		# Set pemboleubah utama
+		# Set pembolehubah utama
 		$jadual = 'biodata_pelajar';
 		$this->papar->senarai['Pengurusan Hafazan'] = $this->tanya->laporanPengurusanHafazan($jadual);
 		$this->papar->_jadual = $jadual;
