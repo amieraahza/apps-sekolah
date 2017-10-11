@@ -8,13 +8,22 @@ $header = null;
 
 <div class="tabbable tabs-top">
 	<ul class="nav nav-tabs putih">
-	
 		<li><a href="#kelas" data-toggle="tab">
 		<span class="badge badge-success">kelas</span>
 		</a></li>
 		<li><a href="#graf" data-toggle="tab">
 		<span class="badge badge-success">graf</span>
-		</a></li>	</ul>
+		</a></li>
+		<li><a href="#graf2" data-toggle="tab">
+		<span class="badge badge-success">graf2</span>
+		</a></li>
+		<li><a href="#graf3" data-toggle="tab">
+		<span class="badge badge-success">graf3</span>
+		</a></li>
+		<li><a href="#graf4" data-toggle="tab">
+		<span class="badge badge-success">graf4</span>
+		</a></li>
+	</ul>
 	<div class="tab-content">
 		<div class="tab-pane" id="kelas">
 <!-- ********************************************************************* -->
@@ -45,6 +54,21 @@ $header = null;
 		<div class="tab-pane" id="graf">
 <!-- ********************************************************************* -->
 <div id="container" style="min-width: 500px; height: 500px; margin: 0 auto"></div>
+<!-- ********************************************************************* -->
+		</div>
+		<div class="tab-pane" id="graf2">
+<!-- ********************************************************************* -->
+<div id="kontena2" style="min-width: 500px; height: 500px; margin: 0 auto"></div>
+<!-- ********************************************************************* -->
+		</div>
+		<div class="tab-pane" id="graf3">
+<!-- ********************************************************************* -->
+<div id="kontena3" style="min-width: 500px; height: 500px; margin: 0 auto"></div>
+<!-- ********************************************************************* -->
+		</div>
+		<div class="tab-pane" id="graf4">
+<!-- ********************************************************************* -->
+<div id="kontena4" style="min-width: 500px; height: 500px; margin: 0 auto"></div>
 <!-- ********************************************************************* -->
 		</div>
 	</div><!-- class="tab-content" -->
