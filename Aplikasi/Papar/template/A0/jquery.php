@@ -154,27 +154,10 @@ echo "\n\n"; ?>
 </script>
 <?php elseif ( isset($dataURL[1]) && $dataURL[1]=='laporanSubjek') : echo "\n";?>
 <script>
-jQuery.noConflict();
-var example = 'column-parsed', 
-theme = 'default';
-(function($){ // encapsulate jQuery
-	Highcharts.chart('container', 
-	{
-		 data: { table: 'summary'  },
-		chart: { type: 'column' },
-		title: { text: 'Data dari jadual sedia ada' },
-		yAxis: {
-				allowDecimals: false,
-				title: { text: 'Units' }
-		},
-		tooltip: {
-			formatter: function () {
-				return '<b>' + this.series.name + '</b><br/>' +
-				this.point.y + ' ' + this.point.name.toLowerCase();
-			}
-		}
-	});	
-})(jQuery);
+<?php 
+	$jquery = new \Aplikasi\Kitab\Jquery_Script();
+	echo $jquery->Summary();
+?>
 </script>
 <?php elseif ( isset($dataURL[1]) && $dataURL[1]=='analisa') : echo "\n";?>
 <script>
