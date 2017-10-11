@@ -159,6 +159,12 @@ echo "\n\n"; ?>
 	echo $jquery->Summary();
 ?>
 </script>
+<script>
+<?php
+	$jquery->kodSummary2(null);
+	$jquery->kodSummary3(null);
+	$jquery->kodSummary4(null);
+?></script>
 <?php elseif ( isset($dataURL[1]) && $dataURL[1]=='analisa') : echo "\n";?>
 <script>
 <?php 
@@ -166,10 +172,6 @@ echo "\n\n"; ?>
 	echo $jquery->kodSummary1($this->namaTajukGraf);
 ?>
 </script>
-<script>
-<?php
-	//echo $jquery->kodSummary2($this->namaTajukGraf);
-?></script>
 <?php /*else :?>
 <link rel="stylesheet" type="text/css" href="<?php echo JS ?>filter/susun.style.css" />
 <script type="text/javascript" src="<?php echo JS ?>filter/susun.application.js"></script>
