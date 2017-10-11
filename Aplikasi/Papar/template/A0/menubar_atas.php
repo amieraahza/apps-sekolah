@@ -58,6 +58,9 @@ $icon['Stats'] = '<span class="glyphicon glyphicon-stats"></span>';
 	<li><a href="<?php echo URL ?>pelajar/hafazan">
 		<i class="fa fa-newspaper-o fa-2x" aria-hidden="true"></i>
 		Pengurusan Hafazan</a></li>
+	<li><a href="<?php echo URL ?>akademik/analisa/subjek/kelas_1_ibn_kathir">
+		<i class="fa fa-newspaper-o fa-2x" aria-hidden="true"></i>
+		Graf Analisa Subjek</a></li>
 	</ul>
 </li>
 <li class="dropdown"><a <?php echo $nav ?> href="#">
@@ -68,4 +71,4 @@ $icon['Stats'] = '<span class="glyphicon glyphicon-stats"></span>';
 	Displin</a></li>
 </ul>
 <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
-<?php 
+<?php
