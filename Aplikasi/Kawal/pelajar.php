@@ -148,6 +148,7 @@ class Pelajar extends \Aplikasi\Kitab\Kawal
 		# Set pembolehubah utama
 		$jadual = 'biodata_pelajar';
 		$this->papar->senarai = $this->tanya->laporanSubjek($jadual, $id);
+		//$this->papar->senarai['Graf1'][] = array();
 		$this->papar->_jadual = $jadual;
 
 		# Scrip untuk js dan css
