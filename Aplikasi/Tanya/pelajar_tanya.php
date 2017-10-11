@@ -2071,7 +2071,7 @@ class Pelajar_Tanya extends \Aplikasi\Kitab\Tanya
 			'31' => '',
 			'this month absence' => '1',
 			'total absence' => '',
-		),		
+		),
 		); 
 
 		$hasil2 = array(); # tiada nilai
@@ -2690,7 +2690,7 @@ class Pelajar_Tanya extends \Aplikasi\Kitab\Tanya
 				'J30<br>582<br>604' => '',
 				'Jumlah<br>MS' => '',
 				'Jumlah<br>Juzuk' => '',
-			),		
+			),
 		);
 
 		$hasil2 = array(); # tiada nilai
