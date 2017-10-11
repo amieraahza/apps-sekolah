@@ -176,6 +176,17 @@ theme = 'default';
 	});	
 })(jQuery);
 </script>
+<?php elseif ( isset($dataURL[1]) && $dataURL[1]=='analisa') : echo "\n";?>
+<script>
+<?php 
+	$jquery = new \Aplikasi\Kitab\Jquery_Script();
+	echo $jquery->kodSummary1($this->namaTajukGraf);
+?>
+</script>
+<script>
+<?php
+	//echo $jquery->kodSummary2($this->namaTajukGraf);
+?></script>
 <?php /*else :?>
 <link rel="stylesheet" type="text/css" href="<?php echo JS ?>filter/susun.style.css" />
 <script type="text/javascript" src="<?php echo JS ?>filter/susun.application.js"></script>
