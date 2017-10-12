@@ -14,15 +14,11 @@ $header = null;
 		<li><a href="#graf" data-toggle="tab">
 		<span class="badge badge-success">graf</span>
 		</a></li>
-		<li><a href="#graf2" data-toggle="tab">
-		<span class="badge badge-success">graf2</span>
+<?php $bilGraf = 6; for($mula = 2; $mula <= $bilGraf; $mula++): ?>
+		<li><a href="#graf<?php echo $mula ?>" data-toggle="tab">
+		<span class="badge badge-success">graf<?php echo $mula ?></span>
 		</a></li>
-		<li><a href="#graf3" data-toggle="tab">
-		<span class="badge badge-success">graf3</span>
-		</a></li>
-		<li><a href="#graf4" data-toggle="tab">
-		<span class="badge badge-success">graf4</span>
-		</a></li>
+<?php endfor; ?>
 	</ul>
 	<div class="tab-content">
 		<div class="tab-pane" id="kelas">
@@ -56,25 +52,17 @@ $header = null;
 <div id="container" style="min-width: 500px; height: 500px; margin: 0 auto"></div>
 <!-- ********************************************************************* -->
 		</div>
-		<div class="tab-pane" id="graf2">
+<?php for($mula = 2; $mula <= $bilGraf; $mula++): ?>
+		<div class="tab-pane" id="graf<?php echo $mula ?>">
 <!-- ********************************************************************* -->
-<div id="kontena2" style="min-width: 500px; height: 500px; margin: 0 auto"></div>
-<!-- ********************************************************************* -->
-		</div>
-		<div class="tab-pane" id="graf3">
-<!-- ********************************************************************* -->
-<div id="kontena3" style="min-width: 500px; height: 500px; margin: 0 auto"></div>
+<div id="kontena<?php echo $mula ?>" style="min-width: 500px; height: 500px; margin: 0 auto"></div>
 <!-- ********************************************************************* -->
 		</div>
-		<div class="tab-pane" id="graf4">
-<!-- ********************************************************************* -->
-<div id="kontena4" style="min-width: 500px; height: 500px; margin: 0 auto"></div>
-<!-- ********************************************************************* -->
-		</div>
+<?php endfor; ?>
 	</div><!-- class="tab-content" -->
 </div><!-- /tabbable -->
 <?php
 /*# Semak data $this->senarai
-echo '<pre>$this->senarai:<br>'; 
+echo '<pre>$this->senarai:<br>';
 print_r($this->senarai);
 echo '</pre>|';//*/
