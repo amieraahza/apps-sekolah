@@ -1,7 +1,5 @@
 <?php 
 $nav = 'class="dropdown-toggle" data-toggle="dropdown"';
-$url = URL;
-$kini = ( !isset($this->kini) ) ? null : $this->kini;
 //<ul class="nav navbar-nav navbar-right">
 $classUL = 'nav navbar-nav navbar-right';
 $icon['User'] = '<span class="glyphicon glyphicon-user"></span>';
@@ -13,7 +11,19 @@ $icon['Stats'] = '<span class="glyphicon glyphicon-stats"></span>';
 <ul class="<?php echo $classUL ?>">
 <li class="dropdown"><a <?php echo $nav ?> href="#">
 	<i class="fa fa-money fa-2x" aria-hidden="true"></i>
-	Student Finance</a></li>
+	Student Finance<b class="caret"></b></a>
+	<ul class="dropdown-menu">
+	<li><a href="<?php echo URL ?>kewangan/semua/1/1">
+		<i class="fa fa-address-card fa-2x" aria-hidden="true"></i>
+		Semua Pelajar</a></li>
+	<li><a href="<?php echo URL ?>kewangan/yuran/1/1">
+		<i class="fa fa-user-secret fa-2x" aria-hidden="true"></i>
+		Resit</a></li>
+	<li><a href="<?php echo URL ?>kewangan/hubungiwaris/surat">
+		<i class="fa fa-link fa-2x" aria-hidden="true"></i>
+		Surat/SMS/Email</a></li>
+	</ul>
+</li>
 <li class="dropdown"><a <?php echo $nav ?> href="#">
 	<i class="fa fa-tachometer fa-2x" aria-hidden="true"></i>
 	Dashboard</a></li>
@@ -71,4 +81,4 @@ $icon['Stats'] = '<span class="glyphicon glyphicon-stats"></span>';
 	Displin</a></li>
 </ul>
 <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
-<?php
+<?php 
