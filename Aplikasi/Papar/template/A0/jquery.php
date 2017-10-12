@@ -164,6 +164,8 @@ echo "\n\n"; ?>
 	$jquery->kodSummary2(null);
 	$jquery->kodSummary3(null);
 	$jquery->kodSummary4(null);
+	$jquery->kodSummary5(null);
+	$jquery->kodSummary6(null);
 ?></script>
 <?php elseif ( isset($dataURL[1]) && $dataURL[1]=='analisa') : echo "\n";?>
 <script>
