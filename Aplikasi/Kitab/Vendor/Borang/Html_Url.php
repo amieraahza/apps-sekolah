@@ -20,6 +20,8 @@ class Html_Url
 			Html_Url::gaya_url_4($data);
 		elseif ($key=='terimaProsesan'):
 			Html_Url::gaya_url_5($data);
+		elseif ($key=='Total'):
+			Html_Url::gaya_url_6($data);
 		elseif ($key=='subject'):
 			Html_Url::gaya_huruf('Besar_Depan', $data);
 		elseif(in_array($key,array('Mesej'))):
@@ -96,6 +98,13 @@ class Html_Url
 			$this->pautanTD('_blank',$k2,$warnaDanger,'cetak');
 			?></td><?php
 		endif;
+	}
+#------------------------------------------------------------------------------------------
+	public static function gaya_url_6($data)
+	{
+		//$align = ($tajuk != 'Total') ? 'text-left' : 'text-right';
+		$align = 'text-right';
+		?><td class="<?php echo $align ?>"><?php echo $data ?></td><?php
 	}
 #------------------------------------------------------------------------------------------
 	public static function gaya_huruf($jenis, $data)
