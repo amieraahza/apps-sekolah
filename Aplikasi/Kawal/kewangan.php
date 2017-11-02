@@ -56,12 +56,12 @@ class Kewangan extends \Aplikasi\Kitab\Kawal
 	{
 		# Set pemboleubah utama
 		$jadual = 'yuran_pelajar';
-		$this->papar->senarai['resit_seorang'][] = $this->tanya->seOrang($jadual);
+		$this->papar->senarai = $this->tanya->seOrang($jadual);
 		$this->papar->jenisBorang = 'papar';
 
 		# Pergi papar kandungan
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
-		$this->paparKandungan('index_jadual');
+		$this->paparKandungan('resit_seorang');
 	}
 #------------------------------------------------------------------------------------------
 	function hubungiwaris($a = null, $b = null)
