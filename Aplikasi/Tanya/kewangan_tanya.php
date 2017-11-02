@@ -230,7 +230,30 @@ class Kewangan_Tanya extends \Aplikasi\Kitab\Tanya
 	public function seOrang($jadual)
 	{
 		# ada nilai
-		$hasil = array(); 
+		$hasil['sekolah'] = array (
+			'nama' => 'Sekolah Kebangsaan Darul Iman (Primary)',
+			'syarikat' => 'Iman Education Sdn Bhd(23x2383-X)',
+			'alamat1_syarikat' => 'Persiaran Kayangan, Bandar Sri Damansara 52200 Kuala Lumpur',
+			'alamat2_syarikat' => '52200 Bandar Sri Damansara. Kuala Lumpur. Malaysia',
+			'notel_syarikat' => '03-62005888',
+			'nofax_syarikat' => '03-60000070',
+			'website_syarikat' => 'http://www.daruliman.edu.my'
+		);
+		$hasil['pelajar'] = array (
+			'nama' => 'PUTERI AFEERA DAYANA',
+			'nokp' => '091026101034',
+			'darjah' => 'Elsa 2',
+			'noMatrik' => '16/P/2300',
+			'alamat' => '0687 JALAN J1 TMN MELAWATI',
+			'poskod' => '53100',
+			'bandar' => 'KUALA LUMPUR',
+		);
+		$hasil['yuran'] = array(
+			0 => array ('Description' => 'Registration Fee', 'Total' => '850.00'),
+			1 => array ('Description' => 'Deposit', 'Total' => '1700.00'),
+			2 => array ('Description' => 'Semester 2 ELSA 2 Scholl Fee', 'Total' => '2899.20'),
+			3 => array ('Description' => 'Semester 2 ELSA 2 Other Fees', 'Total' => '1715.40'),
+		);
 
 		$hasil2 = array(); # tiada nilai
 
