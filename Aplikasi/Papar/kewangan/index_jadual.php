@@ -4,7 +4,8 @@ $ulli = new \Aplikasi\Kitab\HTML_Ulli();
 //$classTable = 'excel';
 $classTable = 'table table-condensed';
 $header = null;
-$idTable = null
+$idTable = null;
+include 'menu_atas.php'; echo menupapar($nav);
 ?>
 <div class="tabbable tabs-top">
 	<ul class="nav nav-tabs putih">
