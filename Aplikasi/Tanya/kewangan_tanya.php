@@ -253,6 +253,7 @@ class Kewangan_Tanya extends \Aplikasi\Kitab\Tanya
 			1 => array ('Description' => 'Deposit', 'Total' => '1700.00'),
 			2 => array ('Description' => 'Semester 2 ELSA 2 Scholl Fee', 'Total' => '2899.20'),
 			3 => array ('Description' => 'Semester 2 ELSA 2 Other Fees', 'Total' => '1715.40'),
+			4 => array ('Description' => '<p class="text-right">All Total :</p>', 'Total' => '7164.60'),
 		);
 
 		$hasil2 = array(); # tiada nilai
