@@ -102,9 +102,7 @@ class Html_Url
 #------------------------------------------------------------------------------------------
 	public static function gaya_url_6($data)
 	{
-		//$align = ($tajuk != 'Total') ? 'text-left' : 'text-right';
-		$align = 'text-right';
-		?><td class="<?php echo $align ?>"><?php echo $data ?></td><?php
+		?><td <?php echo Html_Url::kedudukan('kanan') ?>><?php echo $data ?></td><?php
 	}
 #------------------------------------------------------------------------------------------
 	public static function gaya_huruf($jenis, $data)
@@ -132,6 +130,17 @@ class Html_Url
 		$a[1] = '<i class="fa fa-pencil" aria-hidden="true"></i>';
 
 		return $a[$pilih];
+	}
+#------------------------------------------------------------------------------------------
+	public static function kedudukan($align = 'kiri')
+	{
+		if ($align == 'tengah') $papar = 'class="text-center"'; // Center aligned text
+		elseif ($align == 'kanan') $papar = 'class="text-right"'; //Right aligned text
+		elseif ($align == 'justify') $papar = 'class="text-justify"'; //Justified text
+		elseif ($align == 'nowrap') $papar = 'class="text-nowrap"'; //No wrap text
+		else $papar = 'class="text-left"'; // Left aligned text
+
+		return $papar;
 	}
 #------------------------------------------------------------------------------------------
 #==========================================================================================
