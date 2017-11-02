@@ -134,13 +134,13 @@ class Html_Url
 #------------------------------------------------------------------------------------------
 	public static function kedudukan($align = 'kiri')
 	{
-		if ($align == 'tengah') $papar = 'class="text-center"'; // Center aligned text
-		elseif ($align == 'kanan') $papar = 'class="text-right"'; //Right aligned text
-		elseif ($align == 'justify') $papar = 'class="text-justify"'; //Justified text
-		elseif ($align == 'nowrap') $papar = 'class="text-nowrap"'; //No wrap text
-		else $papar = 'class="text-left"'; // Left aligned text
+		$papar['tengah'] = 'class="text-center"'; // Center aligned text
+		$papar['kanan'] = 'class="text-right"'; //Right aligned text
+		$papar['justify'] = 'class="text-justify"'; //Justified text
+		$papar['nowrap'] = 'class="text-nowrap"'; //No wrap text
+		$papar['kiri'] = 'class="text-left"'; // Left aligned text
 
-		return $papar;
+		return $papar[$align];
 	}
 #------------------------------------------------------------------------------------------
 #==========================================================================================
