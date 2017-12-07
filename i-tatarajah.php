@@ -9,7 +9,8 @@ define('KITAB', 'Aplikasi/Kitab');
 require KITAB . '/Fungsi.php';
 
 # Sentiasa menyediakan garis condong di belakang (/) pada hujung jalan
-define('URL', dirname('http://' . $_SERVER['SERVER_NAME'] . $_SERVER['PHP_SELF']) . '/');
+define('SPORT', ':' . $_SERVER['SERVER_PORT']);
+define('URL', dirname('http://' . $_SERVER['SERVER_NAME'] . SPORT . $_SERVER['PHP_SELF']) . '/');
 define('Tajuk_Muka_Surat', '***');
 
 # setkan jquery, bootstrap dan font awesome sama ada local atau cdn
